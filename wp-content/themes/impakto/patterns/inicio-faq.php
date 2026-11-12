@@ -45,7 +45,9 @@ foreach ( $impakto_preguntas as $impakto_n => list( $impakto_q, $impakto_a ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"62%"} -->
-<div class="wp-block-column" style="flex-basis:62%"><!-- wp:rank-math/faq-block <?php echo serialize_block_attributes( $impakto_faq ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> /--></div>
+<div class="wp-block-column" style="flex-basis:62%"><!-- wp:rank-math/faq-block <?php echo serialize_block_attributes( $impakto_faq ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> -->
+<div class="wp-block-rank-math-faq-block"><?php foreach ( $impakto_faq['questions'] as $impakto_q ) : ?><div class="rank-math-faq-item"><h3 class="rank-math-question"><?php echo esc_html( $impakto_q['title'] ); ?></h3><div class="rank-math-answer"><?php echo esc_html( $impakto_q['content'] ); ?></div></div><?php endforeach; ?></div>
+<!-- /wp:rank-math/faq-block --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->

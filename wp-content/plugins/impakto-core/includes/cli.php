@@ -72,20 +72,21 @@ class Impakto_CLI {
 	 * : Reemplaza el contenido de las entradas sembradas.
 	 *
 	 * [--solo=<tipo>]
-	 * : servicios|proyectos|articulos|paginas|menus
+	 * : articulos|servicios|contenido-servicios|proyectos|paginas|menus
 	 *
 	 * @param array $args  Posicionales.
 	 * @param array $assoc Opciones.
 	 */
 	public function sembrar( $args, $assoc ) {
 		require_once IMPAKTO_CORE_PATH . 'includes/semillas.php';
+		require_once IMPAKTO_CORE_PATH . 'includes/semillas-servicios.php';
 		$solo   = $assoc['solo'] ?? '';
 		$forzar = isset( $assoc['forzar'] );
-		foreach ( array( 'articulos', 'servicios', 'proyectos', 'paginas', 'menus' ) as $tipo ) {
+		foreach ( array( 'articulos', 'servicios', 'contenido-servicios', 'proyectos', 'paginas', 'menus' ) as $tipo ) {
 			if ( $solo && $solo !== $tipo ) {
 				continue;
 			}
-			$resultado = call_user_func( 'impakto_sembrar_' . $tipo, $forzar );
+			$resultado = call_user_func( 'impakto_sembrar_' . str_replace( '-', '_', $tipo ), $forzar );
 			WP_CLI::log( sprintf( '%-10s %s', $tipo, $resultado ) );
 		}
 		flush_rewrite_rules();

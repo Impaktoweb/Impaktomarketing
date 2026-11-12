@@ -87,3 +87,5 @@
 	.wp-block-buttons.is-apilado-movil .boton { width: 100%; }
 }
 .wp-block-impakto-cta { display: inline-flex; }
+/* En pantallas angostas los textos largos de botón pueden partir línea (sin desbordar). */
+@media (max-width: 479px) { .boton, .wp-block-button__link { white-space: normal; text-align: center; max-width: 100%; } }

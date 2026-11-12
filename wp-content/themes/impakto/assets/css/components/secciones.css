@@ -115,3 +115,30 @@
 	.fila-botones.is-apilado-movil .wp-block-button__link { width: 100%; }
 }
 .is-style-hero-oscuro .is-style-pills { margin-top: var(--s-6) !important; }
+
+/* Hero de páginas internas (servicios): menos alto que el de Inicio */
+.is-style-hero-oscuro.hero-compacto { min-height: min(88svh, 760px); }
+
+/* Columnas de sección (38 / 62) y bloque de dato aprobado */
+.columnas-seccion { gap: var(--s-6) clamp(32px, 6vw, 96px) !important; }
+.columnas-seccion > .wp-block-column > .encabezado-seccion { margin-bottom: 0; }
+.seccion-dato { padding-block: clamp(48px, 7vw, 96px); }
+.seccion-dato + .seccion-dato { padding-top: 0; }
+.seccion-dato .destacado { margin: 0; color: var(--c-titulo); font-size: clamp(22px, 1.6vw + 14px, 32px); font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; }
+.encabezado-hero { max-width: 900px; }
+.encabezado-hero .fila-botones { margin-top: var(--s-6); }
+
+/* Hero dividido (Nosotros): columna clara + foto en clave baja (como "Sobre Impakto") */
+.hero-dividido { gap: 0 !important; margin: 0 !important; background: var(--gray-50); }
+.hero-dividido > .wp-block-column { margin: 0 !important; }
+.hero-dividido__texto { padding: calc(var(--alto-header) + var(--s-7)) var(--gutter) var(--s-8); max-width: 680px; margin-left: auto; }
+.hero-dividido__foto { --ratio: 1 / 1; height: 100%; min-height: 320px; }
+@media (min-width: 782px) { .hero-dividido { min-height: min(100svh, 860px); } .hero-dividido__foto { --ratio: auto; min-height: 100%; } .hero-dividido__texto { display: flex; flex-direction: column; justify-content: center; height: 100%; padding-right: var(--s-8); } }
+.titulo-pila { font-size: clamp(44px, 5.4vw, 84px) !important; overflow-wrap: normal; word-break: keep-all; font-weight: 300 !important; line-height: 0.98 !important; letter-spacing: -0.02em; text-transform: uppercase; color: var(--graphite-700); }
+.titulo-pila strong { font-weight: 700; }
+.titulo-pila mark.acento { color: var(--orange-500) !important; font-weight: 300; }
+.marcador-mapa { --ratio: 1 / 1; border-radius: var(--r-tarjeta); }
+.foto-espacio { --ratio: 4 / 3; border-radius: var(--r-tarjeta); margin-bottom: var(--s-5); }
+.numero { color: var(--orange-500); font-weight: 300; margin-right: 6px; }
+.talento-detalle { margin-top: var(--s-8) !important; }
+.espacios-nosotros { gap: var(--s-6) !important; }

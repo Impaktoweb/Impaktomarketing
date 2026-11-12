@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/proyectos-relacionados",
+	"title": "Proyectos relacionados",
+	"category": "impakto",
+	"description": "Sección con proyectos del portafolio de una categoría (por defecto, la vinculada al servicio). Si no hay proyectos, no se muestra.",
+	"textdomain": "impakto",
+	"attributes": {
+		"titulo": { "type": "string", "default": "Proyectos <mark class=\"acento\">relacionados</mark>" },
+		"categoria": { "type": "string", "default": "" },
+		"cantidad": { "type": "number", "default": 3 }
+	},
+	"supports": { "html": false, "className": true, "align": [ "full" ] },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "titulo": "Título (admite <mark class=\"acento\">)", "categoria": "Categoría del portafolio (vacío = la del servicio)", "cantidad": "Cantidad" } }
+}

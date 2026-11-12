@@ -356,6 +356,12 @@ function impakto_sembrar_paginas( $forzar ) {
 		array( 'inicio', 'Inicio', $patron( 'impakto/pagina-inicio' ), '' ),
 		array( 'blog', 'Blog', '', '' ),
 		array( 'guia-de-estilo', 'Guía de estilo', $patron( 'impakto/pagina-guia-estilo' ), 'page-sin-titulo' ),
+		array( 'servicios', 'Servicios', $patron( 'impakto/pagina-servicios' ), 'page-sin-titulo' ),
+		array( 'nosotros', 'Nosotros', $patron( 'impakto/pagina-nosotros' ), 'page-sin-titulo' ),
+	);
+	$seo = array(
+		'servicios' => array( 'Servicios de marketing digital y branding en Manizales | Impakto', 'Investigación, naming, branding, producción audiovisual, pauta digital, web, SEO y CRM. Todo el proceso comercial con un solo aliado en Manizales.', 'servicios de marketing digital Manizales' ),
+		'nosotros'  => array( 'Nosotros: The Marketing Factory de Manizales | Impakto Marketing', 'Somos una agencia de Manizales que combina mercadeo, investigación, producción audiovisual y conocimiento del cerebro humano para generar resultados.', 'agencia de marketing Manizales' ),
 	);
 	$ids = array();
 	foreach ( $paginas as list( $slug, $titulo, $contenido, $plantilla ) ) {
@@ -370,6 +376,11 @@ function impakto_sembrar_paginas( $forzar ) {
 			),
 			$forzar
 		);
+		if ( isset( $seo[ $slug ] ) && is_int( $ids[ $slug ] ) ) {
+			update_post_meta( $ids[ $slug ], 'rank_math_title', $seo[ $slug ][0] );
+			update_post_meta( $ids[ $slug ], 'rank_math_description', $seo[ $slug ][1] );
+			update_post_meta( $ids[ $slug ], 'rank_math_focus_keyword', $seo[ $slug ][2] );
+		}
 	}
 	$inicio = get_page_by_path( 'inicio' );
 	$blog   = get_page_by_path( 'blog' );

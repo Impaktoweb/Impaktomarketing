@@ -2,13 +2,67 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "impakto/cta",
-	"title": "Botón de acción (WhatsApp / Cotizar)",
+	"title": "Botón de acción (WhatsApp / Cotizar / Proyectos)",
 	"category": "impakto",
 	"description": "Botón de WhatsApp con mensaje precargado y medición, o botón que abre el selector Cotiza tu espacio.",
 	"textdomain": "impakto",
-	"attributes": { "tipo": { "type": "string", "enum": ["whatsapp", "cotizar"], "default": "whatsapp" }, "texto": { "type": "string", "default": "" }, "mensaje": { "type": "string", "default": "" }, "ubicacion": { "type": "string", "default": "cta" }, "variante": { "type": "string", "enum": ["primario", "secundario", "enlace"], "default": "primario" } },
-	"supports": { "html": false, "className": true },
+	"attributes": {
+		"tipo": {
+			"type": "string",
+			"enum": [
+				"whatsapp",
+				"cotizar",
+				"proyectos"
+			],
+			"default": "whatsapp"
+		},
+		"texto": {
+			"type": "string",
+			"default": ""
+		},
+		"mensaje": {
+			"type": "string",
+			"default": ""
+		},
+		"ubicacion": {
+			"type": "string",
+			"default": "cta"
+		},
+		"variante": {
+			"type": "string",
+			"enum": [
+				"primario",
+				"secundario",
+				"enlace"
+			],
+			"default": "primario"
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": true
+	},
 	"editorScript": "impakto-bloques-editor",
 	"render": "file:./render.php",
-	"impakto": { "etiquetas": { "tipo": "Acción", "texto": "Texto del botón (vacío = por defecto)", "mensaje": "Mensaje de WhatsApp (vacío = el de la página)", "ubicacion": "Ubicación para la analítica", "variante": "Estilo" }, "opciones": { "tipo": { "whatsapp": "WhatsApp", "cotizar": "Abrir Cotiza tu espacio" }, "variante": { "primario": "Principal (naranja)", "secundario": "Secundario (contorno)", "enlace": "Enlace con flecha" } } }
+	"impakto": {
+		"etiquetas": {
+			"tipo": "Acción",
+			"texto": "Texto del botón (vacío = por defecto)",
+			"mensaje": "Mensaje de WhatsApp (vacío = el de la página)",
+			"ubicacion": "Ubicación para la analítica",
+			"variante": "Estilo"
+		},
+		"opciones": {
+			"tipo": {
+				"whatsapp": "WhatsApp",
+				"cotizar": "Abrir Cotiza tu espacio",
+				"proyectos": "Ver proyectos del servicio"
+			},
+			"variante": {
+				"primario": "Principal (naranja)",
+				"secundario": "Secundario (contorno)",
+				"enlace": "Enlace con flecha"
+			}
+		}
+	}
 }

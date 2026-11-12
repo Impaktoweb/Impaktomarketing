@@ -58,15 +58,12 @@
 	border-top: var(--linea);
 }
 .wp-block-list.is-style-flecha > li {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-	gap: var(--s-4);
-	padding: 18px 0;
+	position: relative;
+	padding: 18px 40px 18px 0;
 	border-bottom: var(--linea);
 	color: var(--c-titulo);
 }
-.wp-block-list.is-style-flecha > li::after { content: "↗"; color: var(--c-acento-texto); font-size: 20px; line-height: 1; }
+.wp-block-list.is-style-flecha > li::after { content: "↗"; position: absolute; right: 4px; top: 18px; color: var(--c-acento-texto); font-size: 20px; line-height: 1; }
 .es-oscuro .wp-block-list.is-style-flecha, .es-oscuro .wp-block-list.is-style-flecha > li,
 .is-style-seccion-oscura .wp-block-list.is-style-flecha, .is-style-seccion-oscura .wp-block-list.is-style-flecha > li { border-color: var(--c-borde-oscuro); color: var(--white); }
 .es-oscuro .wp-block-list.is-style-flecha > li::after,

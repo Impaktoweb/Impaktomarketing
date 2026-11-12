@@ -54,6 +54,21 @@ add_action(
 			wp_enqueue_script_module( 'impakto-' . $modulo, IMPAKTO_TEMA_URL . '/' . $ruta, array(), impakto_version_archivo( $ruta ) );
 		}
 
+		// Anclas del sitio anterior (/servicios#branding) → /servicios/branding/ (BRIEF §14).
+		if ( is_page( 'servicios' ) && function_exists( 'impakto_servicios_publicados' ) ) {
+			$impakto_slugs = wp_list_pluck( impakto_servicios_publicados(), 'post_name' );
+			wp_register_script( 'impakto-servicios-anclas', false, array(), IMPAKTO_TEMA_VERSION, false );
+			wp_enqueue_script( 'impakto-servicios-anclas' );
+			wp_add_inline_script(
+				'impakto-servicios-anclas',
+				sprintf(
+					'(function(){var h=decodeURIComponent(location.hash.slice(1)).toLowerCase(),s=%1$s;if(h&&s.indexOf(h)>-1){location.replace(%2$s+h+"/");}})();',
+					wp_json_encode( array_values( $impakto_slugs ) ),
+					wp_json_encode( trailingslashit( home_url( '/servicios' ) ) )
+				)
+			);
+		}
+
 		// Estilos del bloque FAQ de Rank Math: usamos los del tema.
 		wp_dequeue_style( 'rank-math-faq-block' );
 	},

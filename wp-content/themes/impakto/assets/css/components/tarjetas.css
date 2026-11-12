@@ -209,3 +209,24 @@
 	.bento > .es-completa .tarjeta-proyecto { min-height: 360px; }
 }
 .tarjeta-proyecto .is-style-pills > li { border-color: rgba(255, 255, 255, 0.3); background: rgba(17, 17, 16, 0.35); color: var(--white); }
+
+/* Tarjetas de servicio con botón de WhatsApp (índice de Servicios) */
+.servicios-franja.con-whatsapp > li { position: relative; }
+.servicios-franja.con-whatsapp .tarjeta-servicio { padding-bottom: 88px; }
+.servicios-franja.con-whatsapp .tarjeta-servicio__wa { position: absolute; left: var(--s-5); bottom: var(--s-5); z-index: 1; }
+@media (min-width: 1024px) { .servicios-franja.con-whatsapp { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Línea de tiempo con más de 6 pasos: dos filas en escritorio */
+@media (min-width: 1024px) {
+	.is-style-linea-tiempo:has(> li:nth-child(7)) { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: var(--s-7); }
+}
+
+/* Secciones generadas por bloques (proyectos y servicios relacionados) */
+.seccion-relacionados { padding-block: var(--s-seccion); }
+.rejilla-proyectos { display: grid; gap: var(--s-4); margin: 0; padding: 0; list-style: none; }
+@media (min-width: 768px) { .rejilla-proyectos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-5); } }
+.rejilla-proyectos > li { margin: 0; }
+.rejilla-proyectos .tarjeta-proyecto { min-height: 360px; }
+@media (min-width: 1024px) { .servicios-franja.relacionados { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.tarjeta-servicio__tipo { color: var(--c-acento-texto); font-size: var(--t-xs); font-weight: 600; letter-spacing: var(--ls-kicker); text-transform: uppercase; }
+.cifra__valor .cifra__sufijo { font-size: 0.5em; margin-left: 4px; letter-spacing: 0; }

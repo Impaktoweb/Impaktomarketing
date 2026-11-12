@@ -22,6 +22,10 @@
 		"manual": {
 			"type": "string",
 			"default": ""
+		},
+		"whatsapp": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"supports": {
@@ -35,7 +39,8 @@
 			"bloque": "Bloque del proceso (vacío = todos)",
 			"cantidad": "Cantidad máxima",
 			"ids": "Ids de servicios en orden (opcional, separados por coma)",
-			"manual": "Tarjetas manuales (una por línea: Título | Texto | URL). Si se llena, reemplaza la consulta."
+			"manual": "Tarjetas manuales (una por línea: Título | Texto | URL). Si se llena, reemplaza la consulta.",
+			"whatsapp": "Botón de WhatsApp en cada tarjeta"
 		},
 		"opciones": {
 			"bloque": {

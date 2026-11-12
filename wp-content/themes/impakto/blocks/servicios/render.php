@@ -45,6 +45,8 @@ if ( ! $impakto_tarjetas && post_type_exists( 'servicio' ) ) {
 			'titulo' => get_the_title( $impakto_s ),
 			'texto'  => has_excerpt( $impakto_s ) ? get_the_excerpt( $impakto_s ) : '',
 			'url'    => get_permalink( $impakto_s ),
+			'wa'     => get_post_meta( $impakto_s->ID, '_impakto_whatsapp_mensaje', true ) ? get_post_meta( $impakto_s->ID, '_impakto_whatsapp_mensaje', true ) : sprintf( /* translators: %s: servicio. */ __( 'Hola Impakto, quiero información sobre %s.', 'impakto' ), get_the_title( $impakto_s ) ),
+			'slug'   => $impakto_s->post_name,
 		);
 	}
 }
@@ -52,7 +54,7 @@ if ( ! $impakto_tarjetas ) {
 	return;
 }
 ?>
-<ul <?php echo get_block_wrapper_attributes( array( 'class' => 'servicios-franja' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+<ul <?php echo get_block_wrapper_attributes( array( 'class' => 'servicios-franja' . ( $attributes['whatsapp'] ? ' con-whatsapp' : '' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php foreach ( $impakto_tarjetas as $impakto_i => $impakto_t ) : ?>
 		<li>
 			<a class="tarjeta-servicio" href="<?php echo esc_url( $impakto_t['url'] ); ?>">
@@ -63,6 +65,19 @@ if ( ! $impakto_tarjetas ) {
 				<?php endif; ?>
 				<span class="tarjeta-servicio__flecha" aria-hidden="true"><?php echo impakto_icono( 'flecha-diagonal', 'icono--sm' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 			</a>
+			<?php
+			if ( $attributes['whatsapp'] && ! empty( $impakto_t['wa'] ) ) {
+				echo impakto_boton_whatsapp( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					array(
+						'texto'     => __( 'WhatsApp', 'impakto' ),
+						'mensaje'   => $impakto_t['wa'],
+						'ubicacion' => 'servicios',
+						'servicio'  => $impakto_t['slug'],
+						'clase'     => 'boton boton--sm boton--secundario tarjeta-servicio__wa',
+					)
+				);
+			}
+			?>
 		</li>
 	<?php endforeach; ?>
 </ul>

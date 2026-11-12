@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/servicios-relacionados",
+	"title": "Servicios y artículo relacionados",
+	"category": "impakto",
+	"description": "Enlazado interno del servicio: 2 servicios relacionados y 1 artículo (se eligen en Datos del servicio).",
+	"textdomain": "impakto",
+	"attributes": {
+		"titulo": { "type": "string", "default": "También te puede <mark class=\"acento\">interesar</mark>" }
+	},
+	"supports": { "html": false, "className": true, "align": [ "full" ] },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "titulo": "Título (admite <mark class=\"acento\">)" } }
+}

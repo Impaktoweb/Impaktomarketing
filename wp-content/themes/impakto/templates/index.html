@@ -1,0 +1,32 @@
+<!-- wp:template-part {"slug":"header","tagName":"div","className":"parte-header"} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"contenido","className":"sitio-main","layout":{"type":"default"}} -->
+<main id="contenido" class="wp-block-group sitio-main">
+<!-- wp:group {"align":"full","className":"is-style-hero-curvas","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull is-style-hero-curvas"><!-- wp:query-title {"type":"archive","level":1} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"is-style-seccion-clara","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull is-style-seccion-clara"><!-- wp:query {"queryId":1,"query":{"inherit":true,"perPage":9},"align":"wide"} -->
+<div class="wp-block-query alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:post-title {"level":2,"isLink":true,"fontSize":"h3"} /-->
+<!-- wp:post-excerpt /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination -->
+<!-- wp:query-pagination-previous /-->
+<!-- wp:query-pagination-numbers /-->
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Aún no hay contenido aquí.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"div","className":"parte-footer"} /-->

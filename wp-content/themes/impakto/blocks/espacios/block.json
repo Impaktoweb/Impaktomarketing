@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/espacios",
+	"title": "Espacios propios",
+	"category": "impakto",
+	"description": "Tarjetas de Estudio, Sala de podcast y Equipos con el precio desde de Impakto → Tarifas.",
+	"textdomain": "impakto",
+	"attributes": { "textoEstudio": { "type": "string", "default": "" }, "textoPodcast": { "type": "string", "default": "" }, "textoEquipos": { "type": "string", "default": "" } },
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "textoEstudio": "Texto de la tarjeta Estudio", "textoPodcast": "Texto de la tarjeta Sala de podcast", "textoEquipos": "Texto de la tarjeta Equipos" } }
+}

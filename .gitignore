@@ -1,0 +1,12 @@
+# Repositorio: solo el tema y el plugin propios (BRIEF §1)
+/*
+!/.gitignore
+!/wp-content/
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/impakto/
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/plugins/impakto-core/
+.DS_Store

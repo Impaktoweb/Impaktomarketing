@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Menú móvil a pantalla completa sobre grafito (dialog nativo) y barra inferior fija.
+   ========================================================================== */
+.menu-movil {
+	width: 100%;
+	max-width: none;
+	height: 100%;
+	max-height: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: var(--graphite-900);
+	color: var(--c-sobre-oscuro-suave);
+	overscroll-behavior: contain;
+}
+.menu-movil::backdrop { background: var(--graphite-900); }
+.menu-movil[open] { display: flex; flex-direction: column; animation: menu-entrar var(--dur) var(--ease); }
+.menu-movil__cabecera {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: var(--alto-header);
+	flex: none;
+}
+.menu-movil__cabecera img { width: 120px; height: auto; }
+.menu-movil__cerrar { border-color: rgba(255, 255, 255, 0.2); color: var(--white); margin-right: -4px; }
+.menu-movil__cuerpo { flex: 1; overflow-y: auto; padding-block: var(--s-4) var(--s-7); }
+.menu-movil__lista { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.menu-movil__lista > li { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.menu-movil__enlace,
+.menu-movil__desplegar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 60px;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--white);
+	font: 500 22px/1.2 var(--f-base);
+	text-align: left;
+	text-decoration: none;
+	cursor: pointer;
+}
+.menu-movil__enlace[aria-current="page"] { color: var(--orange-500); }
+.menu-movil__desplegar .icono { transition: transform var(--dur) var(--ease); }
+.menu-movil__desplegar[aria-expanded="true"] .icono { transform: rotate(180deg); }
+.menu-movil__sub { padding: 0 0 var(--s-4); }
+.menu-movil__sub[hidden] { display: none; }
+.menu-movil__grupo { margin: var(--s-4) 0 var(--s-2); color: var(--c-sobre-oscuro-suave); font-size: var(--t-xs); letter-spacing: var(--ls-kicker); text-transform: uppercase; }
+.menu-movil__sub ul { margin: 0; padding: 0; list-style: none; }
+.menu-movil__sub a { display: flex; align-items: center; min-height: var(--toque); color: var(--white); font-size: 17px; text-decoration: none; }
+.menu-movil__sub a:hover { color: var(--orange-500); }
+.menu-movil__acciones { display: grid; gap: 12px; margin-top: var(--s-6); }
+.menu-movil__nap { margin-top: var(--s-7); font-size: var(--t-sm); line-height: 1.7; }
+.menu-movil__nap a { color: var(--white); }
+.menu-movil__redes { display: flex; gap: 8px; margin-top: var(--s-4); }
+.menu-movil__redes a { display: inline-grid; place-items: center; width: var(--toque); height: var(--toque); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--r-pill); color: var(--white); }
+html.menu-abierto { overflow: hidden; }
+@keyframes menu-entrar { from { opacity: 0; } to { opacity: 1; } }
+
+/* Barra inferior fija en móvil: WhatsApp + CTA de la página */
+.barra-movil {
+	position: fixed;
+	inset: auto 0 0;
+	z-index: 90;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px;
+	padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+	background: rgba(17, 17, 16, 0.96);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	transition: transform var(--dur) var(--ease);
+}
+.barra-movil .boton { min-height: 52px; padding-inline: 12px; font-size: 15px; }
+.barra-movil .boton--secundario { border-color: rgba(255, 255, 255, 0.5); color: var(--white); }
+.barra-movil .boton--secundario:hover { background: var(--white); color: var(--graphite-900); }
+/* No tapa el banner de cookies (Fase 5) ni el menú abierto */
+.cookies-visibles .barra-movil,
+.menu-abierto .barra-movil { transform: translateY(110%); }
+@media (min-width: 1024px) { .barra-movil { display: none; } }

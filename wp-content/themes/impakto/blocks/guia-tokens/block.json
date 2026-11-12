@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/guia-tokens",
+	"title": "Guía: tokens",
+	"category": "impakto",
+	"description": "Muestra de colores, contraste y escala tipográfica para la guía de estilo.",
+	"textdomain": "impakto",
+	"attributes": { "seccion": { "type": "string", "enum": ["color", "tipografia", "espaciado"], "default": "color" } },
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "seccion": "Qué mostrar" }, "opciones": { "seccion": { "color": "Color y contraste", "tipografia": "Tipografía", "espaciado": "Espaciado y forma" } } }
+}

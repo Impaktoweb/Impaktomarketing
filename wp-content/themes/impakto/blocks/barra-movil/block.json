@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/barra-movil",
+	"title": "Barra inferior móvil",
+	"category": "impakto",
+	"description": "WhatsApp + CTA principal de la página (solo en móvil).",
+	"textdomain": "impakto",
+	"attributes": {},
+	"supports": { "html": false, "className": true, "multiple": false, "inserter": false },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": {}
+}

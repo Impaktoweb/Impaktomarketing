@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Impakto · Tokens de diseño (BRIEF §4). Fuente de verdad de las variables.
+   Los presets de theme.json usan exactamente estos mismos valores.
+   ========================================================================== */
+:root {
+	/* Color de marca */
+	--orange-500: #FF8000;   /* naranja del logo: acentos, números, botones, líneas */
+	--orange-700: #B35600;   /* naranja para TEXTO pequeño sobre claro (4.9:1) */
+	--graphite-900: #111110; /* fondos oscuros tipo "Brand Essence" */
+	--graphite-800: #2B2B29;
+	--graphite-700: #373734; /* gris del logo: titulares sobre claro, fondos de sección */
+	--gray-600: #5E5E5C;     /* texto de párrafo */
+	--gray-300: #CFCFCB;     /* líneas finas, bordes */
+	--gray-100: #F1F1EF;     /* fondo de sección claro */
+	--gray-50: #F7F7F5;      /* fondo general (gris papel de los PDF) */
+	--white: #FFFFFF;
+	--orange-gradient: radial-gradient(120% 120% at 100% 0%, #FFA41B 0%, #FF8000 45%, #F27200 100%);
+
+	/* Alias semánticos */
+	--c-fondo: var(--gray-50);
+	--c-superficie: var(--white);
+	--c-seccion: var(--gray-100);
+	--c-oscuro: var(--graphite-900);
+	--c-grafito: var(--graphite-700);
+	--c-titulo: var(--graphite-700);
+	--c-texto: var(--gray-600);
+	--c-borde: var(--gray-300);
+	--c-acento: var(--orange-500);
+	--c-acento-texto: var(--orange-700);
+	--c-sobre-oscuro: rgba(255, 255, 255, 0.92);
+	--c-sobre-oscuro-suave: rgba(255, 255, 255, 0.68);
+	--c-borde-oscuro: rgba(255, 255, 255, 0.16);
+
+	/* Tipografía */
+	--f-base: Montserrat, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+	--t-display: clamp(48px, 10vw, 160px);
+	--t-h1: clamp(36px, 6vw, 72px);
+	--t-h2: clamp(28px, 4vw, 48px);
+	--t-h3: clamp(20px, 1.6vw + 14px, 24px);
+	--t-bajada: clamp(19px, 1vw + 15px, 22px);
+	--t-p: clamp(17px, 0.2vw + 16.3px, 18px);
+	--t-sm: 15px;
+	--t-xs: 13px;
+	--t-kicker: clamp(12px, 0.15vw + 11.5px, 13px);
+	--t-paso: clamp(48px, 4vw + 32px, 64px);
+	--lh-p: 1.6;
+	--ls-kicker: 0.2em;
+
+	/* Espaciado (base 4) */
+	--s-1: 4px;
+	--s-2: 8px;
+	--s-3: 12px;
+	--s-4: 16px;
+	--s-5: 24px;
+	--s-6: 32px;
+	--s-7: 48px;
+	--s-8: 64px;
+	--s-9: 96px;
+	--s-10: 128px;
+	--s-seccion: clamp(64px, 10vw, 144px);
+	--gutter: clamp(16px, 4vw, 40px);
+	--ancho: 1280px;
+	--ancho-texto: 760px;
+
+	/* Forma */
+	--r-campo: 4px;
+	--r-tarjeta: 12px;
+	--r-pill: 999px;
+	--linea: 1px solid var(--c-borde);
+	--sombra-flotante: 0 8px 32px rgba(17, 17, 16, 0.12);
+
+	/* Movimiento */
+	--dur: 300ms;
+	--ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+	/* Componentes */
+	--alto-header: 72px;
+	--alto-header-compacto: 60px;
+	--alto-barra-movil: 72px;
+	--toque: 44px;
+	--foco: 0 0 0 2px var(--c-fondo), 0 0 0 4px var(--orange-500);
+}
+
+@media (min-width: 1024px) {
+	:root {
+		--alto-header: 88px;
+		--alto-header-compacto: 68px;
+	}
+}

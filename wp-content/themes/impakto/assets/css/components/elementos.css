@@ -1,0 +1,251 @@
+/* ==========================================================================
+   Elementos gráficos de la marca (BRIEF §4.3) como estilos de bloques nativos.
+   ========================================================================== */
+
+/* Kicker: "NUESTRA PROPUESTA", "THE MARKETING FACTORY" */
+.is-style-kicker,
+.kicker {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 var(--s-4);
+	color: var(--gray-600);
+	font-size: var(--t-kicker);
+	font-weight: 500;
+	line-height: 1.4;
+	letter-spacing: var(--ls-kicker);
+	text-transform: uppercase;
+}
+.is-style-kicker::before,
+.kicker::before { content: ""; width: 24px; height: 1px; background: var(--orange-500); flex: none; }
+.es-oscuro .is-style-kicker, .es-oscuro .kicker,
+[class*="is-style-seccion-oscura"] .is-style-kicker,
+.is-style-seccion-grafito .is-style-kicker,
+.is-style-seccion-cta .is-style-kicker,
+.is-style-hero-oscuro .is-style-kicker { color: var(--c-sobre-oscuro-suave); }
+.is-style-seccion-naranja .is-style-kicker { color: var(--graphite-900); }
+.is-style-seccion-naranja .is-style-kicker::before { background: var(--graphite-900); }
+.has-text-align-center.is-style-kicker { justify-content: center; }
+
+/* Bajada y nota */
+.is-style-bajada { font-size: var(--t-bajada); line-height: 1.5; color: var(--c-texto); max-width: 62ch; }
+.es-oscuro .is-style-bajada,
+.is-style-seccion-oscura .is-style-bajada,
+.is-style-seccion-cta .is-style-bajada { color: var(--c-sobre-oscuro-suave); }
+.is-style-nota { font-size: var(--t-xs); line-height: 1.5; color: var(--gray-600); }
+
+/* Display de sección: 300 Light, MAYÚSCULAS, con línea fina debajo */
+.is-style-display {
+	font-size: var(--t-display) !important;
+	font-weight: 300 !important;
+	line-height: 0.95 !important;
+	letter-spacing: -0.02em !important;
+	text-transform: uppercase;
+	padding-bottom: var(--s-5);
+	border-bottom: var(--linea);
+	margin-bottom: var(--s-6);
+	overflow-wrap: anywhere;
+}
+.es-oscuro .is-style-display,
+.is-style-seccion-grafito .is-style-display,
+.is-style-seccion-oscura .is-style-display { border-color: var(--c-borde-oscuro); }
+
+/* Lista con flecha ↗ ("Qué incluye") */
+.wp-block-list.is-style-flecha {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-top: var(--linea);
+}
+.wp-block-list.is-style-flecha > li {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: var(--s-4);
+	padding: 18px 0;
+	border-bottom: var(--linea);
+	color: var(--c-titulo);
+}
+.wp-block-list.is-style-flecha > li::after { content: "↗"; color: var(--c-acento-texto); font-size: 20px; line-height: 1; }
+.es-oscuro .wp-block-list.is-style-flecha, .es-oscuro .wp-block-list.is-style-flecha > li,
+.is-style-seccion-oscura .wp-block-list.is-style-flecha, .is-style-seccion-oscura .wp-block-list.is-style-flecha > li { border-color: var(--c-borde-oscuro); color: var(--white); }
+.es-oscuro .wp-block-list.is-style-flecha > li::after,
+.is-style-seccion-oscura .wp-block-list.is-style-flecha > li::after { color: var(--orange-500); }
+.is-style-seccion-naranja .wp-block-list.is-style-flecha, .is-style-seccion-naranja .wp-block-list.is-style-flecha > li { border-color: rgba(17, 17, 16, 0.25); color: var(--graphite-900); }
+.is-style-seccion-naranja .wp-block-list.is-style-flecha > li::after { color: var(--graphite-900); }
+
+/* Línea de tiempo numerada "01 ——●" (vertical en móvil, horizontal en escritorio) */
+.is-style-linea-tiempo {
+	--lt-color: var(--gray-300);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	counter-reset: paso;
+	display: grid;
+	gap: var(--s-6);
+}
+.is-style-linea-tiempo > li {
+	position: relative;
+	counter-increment: paso;
+	padding-left: 76px;
+	min-height: 64px;
+	color: var(--c-texto);
+	font-size: var(--t-sm);
+	line-height: 1.55;
+}
+.is-style-linea-tiempo > li::before {
+	content: counter(paso, decimal-leading-zero);
+	position: absolute;
+	left: 0;
+	top: -4px;
+	color: var(--orange-500);
+	font-size: 44px;
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -0.02em;
+}
+/* Línea vertical que une los pasos */
+.is-style-linea-tiempo > li::after {
+	content: "";
+	position: absolute;
+	left: 25px;
+	top: 52px;
+	bottom: calc(-1 * var(--s-6) + 8px);
+	width: 1px;
+	background: var(--lt-color);
+	transform-origin: top;
+	transition: transform 600ms var(--ease);
+}
+.is-style-linea-tiempo > li:last-child::after { display: none; }
+.is-style-linea-tiempo > li > strong:first-child {
+	display: block;
+	margin-bottom: 6px;
+	color: var(--c-titulo);
+	font-size: var(--t-h3);
+	font-weight: 600;
+	line-height: 1.3;
+}
+.es-oscuro .is-style-linea-tiempo,
+.is-style-seccion-oscura .is-style-linea-tiempo { --lt-color: rgba(255, 255, 255, 0.22); }
+.es-oscuro .is-style-linea-tiempo > li,
+.is-style-seccion-oscura .is-style-linea-tiempo > li { color: var(--c-sobre-oscuro-suave); }
+.es-oscuro .is-style-linea-tiempo > li > strong:first-child,
+.is-style-seccion-oscura .is-style-linea-tiempo > li > strong:first-child { color: var(--white); }
+
+@media (min-width: 1024px) {
+	.is-style-linea-tiempo { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: var(--s-6) var(--s-5); }
+	.is-style-linea-tiempo > li { padding-left: 0; padding-top: 80px; }
+	.is-style-linea-tiempo > li::before { font-size: var(--t-paso); top: 0; }
+	/* "——●": línea fina + punto naranja a la derecha del número */
+	.is-style-linea-tiempo > li::after,
+	.is-style-linea-tiempo > li:last-child::after {
+		display: block;
+		left: 84px;
+		right: 8px;
+		top: 26px;
+		bottom: auto;
+		width: auto;
+		height: 9px;
+		background:
+			radial-gradient(circle at calc(100% - 4.5px) 50%, var(--orange-500) 4px, transparent 4.5px),
+			linear-gradient(var(--lt-color), var(--lt-color)) left center / calc(100% - 9px) 1px no-repeat;
+		transform-origin: left;
+	}
+	.is-style-linea-tiempo.es-compacta > li::after { left: 72px; }
+}
+/* La línea se "dibuja" al entrar en pantalla */
+.js .is-style-linea-tiempo.revelar > li::after { transform: scaleY(0); }
+@media (min-width: 1024px) { .js .is-style-linea-tiempo.revelar > li::after { transform: scaleX(0); } }
+.js .is-style-linea-tiempo.revelar.es-visible > li::after { transform: none; }
+.js .is-style-linea-tiempo.revelar.es-visible > li:nth-child(2)::after { transition-delay: 120ms; }
+.js .is-style-linea-tiempo.revelar.es-visible > li:nth-child(3)::after { transition-delay: 240ms; }
+.js .is-style-linea-tiempo.revelar.es-visible > li:nth-child(4)::after { transition-delay: 360ms; }
+.js .is-style-linea-tiempo.revelar.es-visible > li:nth-child(5)::after { transition-delay: 480ms; }
+.js .is-style-linea-tiempo.revelar.es-visible > li:nth-child(6)::after { transition-delay: 600ms; }
+.js .is-style-linea-tiempo.revelar.es-visible > li:nth-child(n+7)::after { transition-delay: 720ms; }
+
+/* Bloque con barra vertical "01 |" (Términos & condiciones) */
+.is-style-barra-vertical {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	counter-reset: barra;
+	display: grid;
+	gap: var(--s-6);
+}
+.is-style-barra-vertical > li {
+	position: relative;
+	counter-increment: barra;
+	padding-left: 64px;
+	color: var(--c-texto);
+}
+.is-style-barra-vertical > li::before {
+	content: counter(barra, decimal-leading-zero);
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: var(--gray-600);
+	font-size: 22px;
+	line-height: 1.3;
+}
+.is-style-barra-vertical > li::after { content: ""; position: absolute; left: 44px; top: 4px; bottom: 4px; width: 1px; background: var(--gray-300); }
+.is-style-barra-vertical > li > strong:first-child { display: block; color: var(--c-titulo); font-weight: 700; }
+
+/* Pills de atributos y chips del hero */
+.is-style-pills {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+.is-style-pills > li {
+	padding: 7px 16px;
+	border: 1px solid var(--gray-300);
+	border-radius: var(--r-pill);
+	color: var(--c-titulo);
+	font-size: var(--t-xs);
+	font-weight: 500;
+	line-height: 1.3;
+	background: rgba(255, 255, 255, 0.5);
+}
+.es-oscuro .is-style-pills > li,
+.is-style-hero-oscuro .is-style-pills > li,
+.is-style-seccion-oscura .is-style-pills > li { border-color: rgba(255, 255, 255, 0.28); color: var(--white); background: rgba(255, 255, 255, 0.04); }
+
+/* Chip de dato: pastilla partida (oscuro | claro) */
+.chip-dato {
+	display: inline-flex;
+	align-items: stretch;
+	border: 1px solid var(--gray-300);
+	border-radius: 14px;
+	overflow: hidden;
+	background: var(--white);
+	font-size: var(--t-sm);
+	line-height: 1.2;
+	vertical-align: middle;
+}
+.chip-dato__etiqueta {
+	display: flex;
+	align-items: center;
+	padding: 12px 18px;
+	background: var(--graphite-700);
+	color: var(--white);
+	font-weight: 600;
+}
+.chip-dato__valor { display: flex; align-items: center; padding: 12px 18px; color: var(--graphite-700); font-weight: 500; white-space: nowrap; }
+.chip-dato--grande { font-size: 18px; }
+.chip-dato--grande .chip-dato__valor { font-size: clamp(20px, 2vw, 28px); font-weight: 600; }
+.es-oscuro .chip-dato { border-color: rgba(255, 255, 255, 0.2); }
+.fila-chips { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Tabla de tarifas limpia: "1 hora ...... $120.000 COP ↗" */
+.wp-block-table.is-style-tarifas table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.wp-block-table.is-style-tarifas :is(th, td) { padding: 16px 0; border: 0; border-bottom: var(--linea); text-align: left; vertical-align: baseline; }
+.wp-block-table.is-style-tarifas thead th { color: var(--gray-600); font-size: var(--t-xs); font-weight: 500; letter-spacing: var(--ls-kicker); text-transform: uppercase; }
+.wp-block-table.is-style-tarifas td { color: var(--c-titulo); }
+.wp-block-table.is-style-tarifas :is(th, td):not(:first-child) { text-align: right; padding-left: var(--s-4); }
+.wp-block-table.is-style-tarifas tbody td:last-child { font-weight: 600; }
+.wp-block-table.is-style-tarifas tbody td:last-child::after { content: " ↗"; color: var(--c-acento-texto); font-weight: 400; }
+.wp-block-table.is-style-tarifas figcaption { margin-top: 12px; font-size: var(--t-xs); color: var(--gray-600); }

@@ -1,0 +1,5 @@
+/* Ajustes solo para el editor de bloques. */
+.editor-styles-wrapper { background: var(--gray-50); }
+.editor-styles-wrapper .is-style-hero-oscuro { min-height: 560px; }
+.editor-styles-wrapper .is-style-hero-curvas { padding-top: var(--s-8); }
+.editor-styles-wrapper .revelar { opacity: 1 !important; transform: none !important; }

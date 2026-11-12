@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/header",
+	"title": "Header Impakto",
+	"category": "impakto",
+	"description": "Header fijo con menú principal, mega menú de servicios, selector Cotiza tu espacio y menú móvil.",
+	"textdomain": "impakto",
+	"attributes": {},
+	"supports": { "html": false, "className": true, "multiple": false, "inserter": false },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": {}
+}

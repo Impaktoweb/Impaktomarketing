@@ -1,0 +1,14 @@
+/*
+Theme Name: Impakto
+Theme URI: https://impaktomarketing.com
+Author: Impakto Marketing S.A.S.
+Description: Tema de bloques a medida para Impakto Marketing — The Marketing Factory. Requiere el plugin Impakto Core para los datos (servicios, portafolio, tarifas y cotizaciones).
+Requires at least: 6.6
+Tested up to: 7.1
+Requires PHP: 8.1
+Version: 0.1.0
+License: Propietario
+Text Domain: impakto
+*/
+
+/* Los estilos viven en assets/css/. Este archivo solo identifica el tema. */

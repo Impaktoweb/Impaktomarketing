@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Botones: .boton (bloques propios) y core/button (estilos "Relleno", "Contorno", "Flecha").
+   ========================================================================== */
+.boton,
+.wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	min-height: 48px;
+	padding: 14px 28px;
+	border: 1px solid transparent;
+	border-radius: var(--r-pill);
+	background: var(--orange-500);
+	color: var(--graphite-900);
+	font: 600 15px/1.2 var(--f-base);
+	letter-spacing: 0.01em;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+	-webkit-tap-highlight-color: transparent;
+}
+.boton:hover,
+.wp-block-button__link:hover { background: #FF9426; color: var(--graphite-900); }
+.boton:active,
+.wp-block-button__link:active { transform: translateY(1px); background: #F27200; }
+.boton:focus-visible,
+.wp-block-button__link:focus-visible { outline: none; box-shadow: var(--foco); }
+.boton[disabled], .boton[aria-disabled="true"] { opacity: 0.45; pointer-events: none; }
+.boton .icono { width: 20px; height: 20px; }
+
+/* Secundario: contorno grafito (claro) o blanco (oscuro). */
+.boton--secundario,
+.wp-block-button.is-style-outline > .wp-block-button__link {
+	background: transparent;
+	border-color: var(--graphite-700);
+	color: var(--graphite-700);
+}
+.boton--secundario:hover,
+.wp-block-button.is-style-outline > .wp-block-button__link:hover { background: var(--graphite-700); color: var(--white); }
+.boton--secundario:active,
+.wp-block-button.is-style-outline > .wp-block-button__link:active { background: var(--graphite-900); }
+.es-oscuro .boton--secundario,
+.es-oscuro .wp-block-button.is-style-outline > .wp-block-button__link { border-color: rgba(255, 255, 255, 0.6); color: var(--white); }
+.es-oscuro .boton--secundario:hover,
+.es-oscuro .wp-block-button.is-style-outline > .wp-block-button__link:hover { background: var(--white); border-color: var(--white); color: var(--graphite-900); }
+
+/* Sobre la sección naranja, el principal pasa a grafito. */
+.is-style-seccion-naranja .boton:not(.boton--secundario),
+.is-style-seccion-naranja .wp-block-button:not(.is-style-outline) > .wp-block-button__link { background: var(--graphite-900); color: var(--white); }
+
+/* Enlace con flecha "Ver todo →" */
+.boton--enlace,
+.wp-block-button.is-style-flecha > .wp-block-button__link {
+	min-height: var(--toque);
+	padding: 8px 0;
+	background: none;
+	border: 0;
+	border-radius: 0;
+	color: var(--c-titulo);
+	font-weight: 600;
+}
+.boton--enlace::after,
+.wp-block-button.is-style-flecha > .wp-block-button__link::after {
+	content: "→";
+	color: var(--c-acento-texto);
+	transition: transform var(--dur) var(--ease);
+}
+.boton--enlace:hover,
+.wp-block-button.is-style-flecha > .wp-block-button__link:hover { background: none; color: var(--c-acento-texto); }
+.boton--enlace:hover::after,
+.wp-block-button.is-style-flecha > .wp-block-button__link:hover::after { transform: translateX(4px); }
+.es-oscuro .boton--enlace,
+.es-oscuro .wp-block-button.is-style-flecha > .wp-block-button__link { color: var(--white); }
+.es-oscuro .boton--enlace::after,
+.es-oscuro .wp-block-button.is-style-flecha > .wp-block-button__link::after { color: var(--orange-500); }
+
+.boton--sm { min-height: var(--toque); padding: 10px 20px; font-size: 14px; }
+.boton--bloque { width: 100%; }
+
+.wp-block-buttons { gap: 12px; }
+@media (max-width: 479px) {
+	.wp-block-buttons.is-apilado-movil > .wp-block-button,
+	.wp-block-buttons.is-apilado-movil > .wp-block-button .wp-block-button__link,
+	.wp-block-buttons.is-apilado-movil > .wp-block-impakto-cta,
+	.wp-block-buttons.is-apilado-movil .boton { width: 100%; }
+}
+.wp-block-impakto-cta { display: inline-flex; }

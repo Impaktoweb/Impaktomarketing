@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Secciones (estilos de core/group) y hero (estilo de core/cover).
+   Una idea por sección, mucho aire.
+   ========================================================================== */
+[class*="is-style-seccion-"],
+.is-style-hero-curvas {
+	padding-block: var(--s-seccion);
+}
+.is-style-seccion-clara { background: var(--gray-50); }
+.is-style-seccion-gris { background: var(--gray-100); }
+.is-style-seccion-blanca { background: var(--white); }
+
+.is-style-seccion-oscura,
+.is-style-seccion-grafito,
+.is-style-seccion-naranja,
+.es-oscuro {
+	color: var(--c-sobre-oscuro-suave);
+}
+.is-style-seccion-oscura { background: var(--graphite-900); }
+.is-style-seccion-grafito { background: var(--graphite-700); }
+.is-style-seccion-naranja { background: var(--orange-gradient); color: var(--graphite-900); }
+.is-style-seccion-oscura :is(h1, h2, h3, h4),
+.is-style-seccion-grafito :is(h1, h2, h3, h4),
+.es-oscuro :is(h1, h2, h3, h4) { color: var(--white); }
+/* El blanco sobre #FF8000 da 2,5:1 (no cumple WCAG AA ni en texto grande):
+   en la sección naranja el texto va en grafito 900 (6,8:1) y el acento en blanco solo como peso. */
+.is-style-seccion-naranja :is(h1, h2, h3, h4) { color: var(--graphite-900); }
+.is-style-seccion-naranja :is(h1, h2, h3) mark.acento { color: var(--graphite-900); font-weight: 700; }
+.is-style-seccion-naranja p { color: var(--graphite-900); }
+
+/* CTA final: grafito con el patrón de curvas. */
+.is-style-seccion-cta {
+	padding-block: var(--s-seccion);
+	background: url("../../img/patron-curvas-oscuro.svg") right top / cover no-repeat, var(--graphite-900);
+	color: var(--c-sobre-oscuro-suave);
+}
+.is-style-seccion-cta :is(h1, h2, h3) { color: var(--white); }
+
+/* Hero claro con el patrón de curvas sobre degradado gris. */
+.is-style-hero-curvas {
+	background:
+		url("../../img/patron-curvas.svg") right top / cover no-repeat,
+		linear-gradient(160deg, var(--gray-50) 0%, var(--gray-100) 100%);
+	padding-top: calc(var(--alto-header) + var(--s-8));
+}
+
+/* Encabezado de sección: kicker + H2 bicolor + bajada. */
+.encabezado-seccion { max-width: 820px; margin-bottom: var(--s-7); }
+.encabezado-seccion > * + * { margin-top: var(--s-4); }
+.encabezado-seccion.is-centrado { margin-inline: auto; text-align: center; }
+.fila-encabezado { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--s-4) var(--s-6); margin-bottom: var(--s-7); }
+.fila-encabezado > .encabezado-seccion { margin-bottom: 0; }
+
+/* Hero oscuro (core/group "Hero oscuro"): foto/video de fondo, texto abajo. */
+.is-style-hero-oscuro {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-height: min(100svh, 920px);
+	padding-top: calc(var(--alto-header) + var(--s-8));
+	padding-bottom: clamp(48px, 8vw, 112px);
+	background:
+		url("../../img/patron-curvas-oscuro.svg") right top / cover no-repeat,
+		radial-gradient(90% 80% at 85% 15%, #2b2b29 0%, #111110 65%);
+	color: var(--c-sobre-oscuro);
+	isolation: isolate;
+	overflow: hidden;
+}
+.is-style-hero-oscuro > * { position: relative; z-index: 1; }
+.is-style-hero-oscuro h1 { color: var(--white); max-width: 14ch; }
+.is-style-hero-oscuro p { color: var(--c-sobre-oscuro); max-width: 60ch; }
+.is-style-hero-oscuro .is-style-bajada { color: var(--c-sobre-oscuro); }
+.is-style-hero-oscuro .hero-media { position: absolute; inset: 0; z-index: 0; max-width: none !important; margin: 0 !important; }
+.is-style-hero-oscuro .hero-media :is(img, video) { width: 100%; height: 100%; object-fit: cover; }
+.is-style-hero-oscuro .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(17, 17, 16, 0.55) 0%, rgba(17, 17, 16, 0.3) 40%, rgba(17, 17, 16, 0.88) 100%); }
+.is-style-hero-oscuro .hero-marcador {
+	position: absolute;
+	right: var(--gutter);
+	top: calc(var(--alto-header) + 16px);
+	z-index: 1;
+	margin: 0 !important;
+	padding: 6px 12px;
+	border: 1px solid var(--c-borde-oscuro);
+	border-radius: var(--r-pill);
+	color: var(--c-sobre-oscuro-suave);
+	font-size: 11px;
+	letter-spacing: var(--ls-kicker);
+	text-transform: uppercase;
+}
+@media (max-width: 767px) { .is-style-hero-oscuro .hero-marcador { display: none; } }
+
+.fila-botones { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+@media (max-width: 479px) {
+	.fila-botones.is-apilado-movil > * { flex: 1 1 100%; }
+	.fila-botones.is-apilado-movil .boton { width: 100%; }
+}
+
+/* Pestaña con el logo en la esquina superior derecha (como en los PDF). */
+.con-pestana-logo { position: relative; }
+.con-pestana-logo::after {
+	content: "";
+	position: absolute;
+	top: clamp(16px, 3vw, 32px);
+	right: 0;
+	width: clamp(96px, 10vw, 136px);
+	height: clamp(30px, 3vw, 40px);
+	background: url("../../img/logo-impakto-color.png") center / 62% auto no-repeat, #E9E9E6;
+	pointer-events: none;
+	clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+}
+@media (max-width: 479px) {
+	.fila-botones.is-apilado-movil .wp-block-buttons,
+	.fila-botones.is-apilado-movil .wp-block-button,
+	.fila-botones.is-apilado-movil .wp-block-button__link { width: 100%; }
+}
+.is-style-hero-oscuro .is-style-pills { margin-top: var(--s-6) !important; }

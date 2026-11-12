@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/portafolio-destacado",
+	"title": "Portafolio destacado (bento)",
+	"category": "impakto",
+	"description": "Proyectos marcados como Destacado, en cuadrícula bento.",
+	"textdomain": "impakto",
+	"attributes": { "cantidad": { "type": "number", "default": 6 }, "soloDestacados": { "type": "boolean", "default": true }, "categoria": { "type": "string", "default": "" } },
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "cantidad": "Cantidad", "soloDestacados": "Solo destacados", "categoria": "Categoría del portafolio (slug, opcional)" } }
+}

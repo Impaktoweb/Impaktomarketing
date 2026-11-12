@@ -1,0 +1,194 @@
+{
+  "_nota": "Datos iniciales del cotizador. Se importan una sola vez a Impakto > Tarifas y desde allí se editan. Valores en COP con IVA incluido. Fuentes: 'Plantilla cotización Estudio y Podcast' (espacios, podcast, edición, adicionales) y 'Plantilla 3 portada' (equipos). Los campos 'confirmar' indican datos que Impakto debe validar.",
+  "moneda": "COP",
+  "iva_incluido": true,
+  "deposito_reembolsable": 200000,
+  "whatsapp": "573125525901",
+
+  "estudio": {
+    "precio_desde": 120000,
+    "precio_desde_texto": "Desde $120.000 COP por hora",
+    "modo_calculo": "bloques_mas_economicos",
+    "horas_min": 1,
+    "horas_max": 8,
+    "espacios": [
+      {
+        "id": "medio-estudio",
+        "nombre": "Medio estudio",
+        "descripcion": "Sinfín en L · 45 m²",
+        "area_m2": 45,
+        "bloques": { "1": 120000, "4": 350000, "8": 700000 }
+      },
+      {
+        "id": "estudio-completo",
+        "nombre": "Estudio completo",
+        "descripcion": "Sinfín en U · 90 m²",
+        "area_m2": 90,
+        "bloques": { "1": 200000, "4": 600000, "8": 1200000 }
+      }
+    ],
+    "capacidad_personas": 10,
+    "incluye": [
+      "Sinfín en U de 12 × 4 m (estudio completo) o en L (medio estudio)",
+      "Iluminación profesional, trípodes y grip",
+      "Fondos estándar de diferentes colores",
+      "Potencia eléctrica 110 V y 220 V",
+      "Sala de estar, sala de juntas, cocineta, terraza y baños",
+      "Internet wifi",
+      "Disponible 24/7 con reserva"
+    ],
+    "confirmar": [
+      "Medida del sinfín en U: 'Sobre Impakto' dice 12 × 4 m y la plantilla de cotización dice 10 × 4 m.",
+      "El contrato habla de 'medio estudio' y 'estudio completo'; la plantilla, de 'estudio en L' y 'estudio en U'. Se usan ambos nombres."
+    ]
+  },
+
+  "podcast": {
+    "precio_desde": 180000,
+    "precio_desde_texto": "Desde $180.000 COP por hora",
+    "modo_calculo": "por_hora",
+    "horas_min": 1,
+    "horas_max": 8,
+    "horas_tarifa_publicada": 4,
+    "nota_horas_extra": "De 5 a 8 horas: sujeto a confirmación",
+    "area_m2": 24,
+    "capacidad_personas": 6,
+    "paquetes": [
+      { "id": "1c-1m", "nombre": "1 cámara + 1 micrófono", "camaras": 1, "microfonos": 1, "precio_hora": 180000 },
+      { "id": "2c-2m", "nombre": "2 cámaras + 2 micrófonos", "camaras": 2, "microfonos": 2, "precio_hora": 200000 },
+      { "id": "2c-3m", "nombre": "2 cámaras + 3 micrófonos", "camaras": 2, "microfonos": 3, "precio_hora": 220000 },
+      { "id": "3c-4m", "nombre": "3 cámaras + 4 micrófonos", "camaras": 3, "microfonos": 4, "precio_hora": 240000 }
+    ],
+    "incluye": [
+      "Sala de grabación profesional de 6 × 4 m con insonorización",
+      "Micrófonos profesionales Rode",
+      "Consolas Rode de audio y video",
+      "Iluminación profesional",
+      "Productor de podcast / acompañamiento técnico",
+      "Sala de estar, terraza, cocineta y baños",
+      "Internet wifi",
+      "Disponible 24/7 con reserva"
+    ],
+    "edicion": {
+      "descripcion": "Precio según las horas grabadas",
+      "estandar": { "1": 90000, "2": 110000, "3": 130000, "4": 150000 },
+      "avanzada": { "1": 120000, "2": 210000, "3": 340000, "4": 450000 }
+    },
+    "confirmar": [
+      "El contrato trae otras tarifas por paquetes (Mic & Shot, Dual, Triple, All) y una 'hora adicional' de $120.000. Se usa la plantilla de cotización.",
+      "Tarifa de 5 a 8 horas."
+    ]
+  },
+
+  "adicionales": [
+    { "id": "maquillaje", "nombre": "Área de maquillaje, peluquería y vestier", "precio": 50000, "unidad": "por reserva", "aplica": ["estudio", "podcast"] },
+    { "id": "productor", "nombre": "Productor audiovisual (asistencia técnica)", "precio_hora": 100000, "unidad": "por hora por productor", "aplica": ["estudio", "equipos"], "confirmar": "Calculado con la cotización de ejemplo: 2 productores × 8 h = $1.600.000." },
+    { "id": "edicion-podcast", "nombre": "Edición de podcast", "ver": "podcast.edicion", "aplica": ["podcast"] }
+  ],
+
+  "equipos": {
+    "unidad_precio": "jornada",
+    "confirmar_unidad": "Confirmar si el precio de la lista es por jornada (hasta 8 h), por día o por hora.",
+    "categorias": [
+      { "id": "camaras", "nombre": "Cámaras", "items": [
+        { "id": "sony-a7-iv", "nombre": "Sony Alpha 7 IV", "precio": 400000 },
+        { "id": "sony-zv-e10-ii", "nombre": "Sony Alpha ZV-E10 II", "precio": 180000 }
+      ]},
+      { "id": "lentes", "nombre": "Lentes / óptica", "items": [
+        { "id": "sony-fe-85-gm", "nombre": "Sony FE 85 mm G Master", "precio": 120000 },
+        { "id": "sigma-30-contemporary", "nombre": "Sigma 30 mm Contemporary", "precio": 80000 },
+        { "id": "sony-fe-28", "nombre": "Sony FE 28 mm", "precio": 70000 }
+      ]},
+      { "id": "drones", "nombre": "Drones", "items": [
+        { "id": "dji-inspire", "nombre": "DJI Inspire", "precio": 180000, "requiere_operador": true },
+        { "id": "dji-fpv", "nombre": "DJI FPV", "precio": 150000, "requiere_operador": true },
+        { "id": "dji-mini-4-pro", "nombre": "DJI Mini 4 Pro", "precio": 100000, "requiere_operador": true }
+      ]},
+      { "id": "transmisores", "nombre": "Transmisores de video", "items": [
+        { "id": "hollyland-pyro-h", "nombre": "Hollyland Pyro H", "precio": 100000 }
+      ]},
+      { "id": "microfonos", "nombre": "Micrófonos", "items": [
+        { "id": "dji-mic", "nombre": "DJI Mic", "precio": 60000 },
+        { "id": "hollyland-lark-m2", "nombre": "Hollyland Lark M2", "precio": 55000 },
+        { "id": "rode-wireless-go-ii", "nombre": "Rode Wireless GO II", "precio": 20000 }
+      ]},
+      { "id": "teleprompters", "nombre": "Teleprompters", "items": [
+        { "id": "teleprompter-elgato", "nombre": "Teleprompter Elgato", "precio": 50000 },
+        { "id": "teleprompter-smallrig", "nombre": "Teleprompter SmallRig", "precio": 45000 }
+      ]},
+      { "id": "intercomunicadores", "nombre": "Intercomunicadores", "items": [
+        { "id": "hollyland-solidcom-se", "nombre": "Hollyland Solidcom SE", "precio": 40000 },
+        { "id": "retevis-eak001", "nombre": "Retevis EAK001", "precio": 25000 }
+      ]},
+      { "id": "estabilizadores", "nombre": "Estabilizadores y movimiento", "items": [
+        { "id": "grua-de-cine", "nombre": "Grúa de cine", "precio": 200000 },
+        { "id": "dji-ronin-rs4", "nombre": "DJI Ronin RS4", "precio": 180000 },
+        { "id": "dolly-andoer", "nombre": "Dolly motorizado Andoer", "precio": 80000 },
+        { "id": "slider-proaim", "nombre": "Slider Proaim", "precio": 80000 },
+        { "id": "tilta-osmo-pocket", "nombre": "Tilta para Osmo Pocket", "precio": 60000 }
+      ]},
+      { "id": "video-asistencia", "nombre": "Video asistencia", "items": [
+        { "id": "feelworld-7", "nombre": "Monitor de campo táctil 7\" FeelWorld", "precio": 60000 }
+      ]},
+      { "id": "iluminacion", "nombre": "Iluminación", "items": [
+        { "id": "nanlite-fc500", "nombre": "Nanlite FC500", "precio": 180000 },
+        { "id": "nanlite-fc120c", "nombre": "Nanlite FC120C", "precio": 120000 },
+        { "id": "nanlite-pj-fmm-36", "nombre": "Nanlite PJ-FMM-36 (proyector)", "precio": 100000 },
+        { "id": "pavotube-ii-30x", "nombre": "Nanlite PavoTube II 30X", "precio": 80000 },
+        { "id": "pavotube-ii-6c", "nombre": "Nanlite PavoTube II 6C", "precio": 40000 },
+        { "id": "lumecube-studio-panel", "nombre": "Lume Cube Studio Panel", "precio": 35000 }
+      ]},
+      { "id": "modificadores", "nombre": "Difusores y modificadores", "items": [
+        { "id": "fresnel-fl-20g", "nombre": "Fresnel Nanlite FL-20G", "precio": 35000 },
+        { "id": "fresnel-fl-11", "nombre": "Fresnel Nanlite FL-11", "precio": 30000 },
+        { "id": "lantern-120", "nombre": "Lantern Softbox 120 Nanlite", "precio": 30000 },
+        { "id": "rapid-90-parabolic", "nombre": "Rapid 90 Parabolic Nanlite", "precio": 30000 },
+        { "id": "lantern-80", "nombre": "Lantern Softbox 80 Nanlite", "precio": 25000 },
+        { "id": "softbox-60-fmm", "nombre": "Softbox 60 FMM Nanlite", "precio": 20000 },
+        { "id": "octagonal-60", "nombre": "Softbox octagonal 60 cm Nanlite", "precio": 15000 }
+      ]},
+      { "id": "baterias", "nombre": "Baterías y energía", "items": [
+        { "id": "tb47", "nombre": "Batería Intelligent Flight TB47", "precio": 35000 },
+        { "id": "vb99-se-mini", "nombre": "VB99 SE mini V-Mount 100 W", "precio": 20000 },
+        { "id": "np-f960", "nombre": "Batería NP-F960 / F970", "precio": 20000 },
+        { "id": "np-fz100", "nombre": "Batería NP-FZ100", "precio": 15000 },
+        { "id": "powerbank-10000", "nombre": "Powerbank 10.000 mAh", "precio": 15000 },
+        { "id": "powerbank-5000", "nombre": "Powerbank 5.000 mAh", "precio": 10000 }
+      ]},
+      { "id": "tripodes", "nombre": "Trípodes", "items": [
+        { "id": "heavyduty-smallrig", "nombre": "Trípode Heavy Duty SmallRig", "precio": 50000 },
+        { "id": "kf-t254a8", "nombre": "Trípode K&F Concept T254A8", "precio": 30000 },
+        { "id": "linewire", "nombre": "Trípode Linewire", "precio": 25000 }
+      ]},
+      { "id": "grip", "nombre": "Grip / hierros", "items": [
+        { "id": "c-stand-jirafa", "nombre": "C-Stand con jirafa", "precio": 25000 },
+        { "id": "c-stand-mathews", "nombre": "C-Stand Matthews", "precio": 20000 },
+        { "id": "fetos", "nombre": "Fetos", "precio": 15000 }
+      ]},
+      { "id": "electricos", "nombre": "Extensiones y regletas", "items": [
+        { "id": "extension-25", "nombre": "Extensión de 25 m", "precio": 15000 },
+        { "id": "extension-10", "nombre": "Extensión de 10 m", "precio": 8000 },
+        { "id": "extension-5", "nombre": "Extensión de 5 m", "precio": 5000 },
+        { "id": "regleta-6", "nombre": "Regleta de 6 conectores", "precio": 5000 },
+        { "id": "regleta-4", "nombre": "Regleta de 4 conectores", "precio": 4000 }
+      ]},
+      { "id": "efectos", "nombre": "Efectos y producción", "items": [
+        { "id": "smoke-ninja-pro", "nombre": "Máquina de humo Smoke Ninja Pro", "precio": 80000 },
+        { "id": "f900", "nombre": "Máquina de humo Pro DJ Lighting F900", "precio": 50000 },
+        { "id": "compresor-125", "nombre": "Compresor de 125 PSI", "precio": 45000 },
+        { "id": "ventilador-wurden", "nombre": "Ventilador Würden 110 W", "precio": 30000 }
+      ]},
+      { "id": "escaleras", "nombre": "Escaleras", "items": [
+        { "id": "escalera-35", "nombre": "Escalera plegable 3,5 m", "precio": 30000 },
+        { "id": "escalera-3", "nombre": "Escalera de 3 m", "precio": 20000 },
+        { "id": "escalera-065", "nombre": "Escalera de 65 cm", "precio": 10000 }
+      ]}
+    ],
+    "pendientes_de_precio": [
+      "GoPro 360", "Insta360", "GoPro 7", "Sigma 24-70 mm Art", "Godox 200", "Nanlite 60",
+      "DJI OM6", "DJI Osmo 4", "Rode Boom", "DJI Mic 2", "Hollyland Lark A1",
+      "SmallRig AD-01", "Proaim Flyking", "Lumecube barra / panel para cámara",
+      "Dos lentes marcados '???' en la lista"
+    ]
+  }
+}

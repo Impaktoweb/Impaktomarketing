@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/cifra",
+	"title": "Cifra destacada",
+	"category": "impakto",
+	"description": "Número grande con contador animado, texto y nota de fuente (con fecha de la métrica).",
+	"textdomain": "impakto",
+	"attributes": { "prefijo": { "type": "string", "default": "" }, "valor": { "type": "string", "default": "300" }, "sufijo": { "type": "string", "default": "" }, "texto": { "type": "string", "default": "" }, "nota": { "type": "string", "default": "" } },
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "prefijo": "Prefijo (p. ej. $)", "valor": "Valor (p. ej. 1.990 o 12,5)", "sufijo": "Sufijo (p. ej. %)", "texto": "Texto", "nota": "Nota de fuente y fecha" } }
+}

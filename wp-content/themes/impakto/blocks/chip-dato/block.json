@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/chip-dato",
+	"title": "Chip de dato",
+	"category": "impakto",
+	"description": "Pastilla partida: etiqueta oscura | valor claro (p. ej. Medio estudio | 45 m²).",
+	"textdomain": "impakto",
+	"attributes": { "etiqueta": { "type": "string", "default": "Medio estudio" }, "valor": { "type": "string", "default": "45 m²" }, "grande": { "type": "boolean", "default": false } },
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "etiqueta": "Etiqueta", "valor": "Valor", "grande": "Tamaño grande (precio destacado)" } }
+}

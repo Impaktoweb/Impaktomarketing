@@ -141,3 +141,4 @@ a:hover { color: var(--c-oscuro); }
 /* El primer hero claro ya queda debajo del header: no duplica el espacio. */
 .sitio-main > .is-style-hero-curvas:first-child,
 .sitio-main > .wp-block-post-content > .is-style-hero-curvas:first-child { padding-top: var(--s-8); }
+[hidden] { display: none !important; }

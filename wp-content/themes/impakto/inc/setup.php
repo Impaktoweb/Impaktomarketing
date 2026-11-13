@@ -80,6 +80,7 @@ add_action(
 				'linea-tiempo'   => __( 'Línea de tiempo 01 ——●', 'impakto' ),
 				'barra-vertical' => __( 'Numerada con barra 01 |', 'impakto' ),
 				'pills'          => __( 'Pills', 'impakto' ),
+				'caracteristicas' => __( 'Características con ícono ✓', 'impakto' ),
 			),
 			'core/button'    => array( 'flecha' => __( 'Enlace con flecha →', 'impakto' ) ),
 			'core/table'     => array( 'tarifas' => __( 'Tabla de tarifas', 'impakto' ) ),

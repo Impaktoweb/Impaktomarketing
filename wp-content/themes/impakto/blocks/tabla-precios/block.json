@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/tabla-precios",
+	"title": "Tabla de precios",
+	"category": "impakto",
+	"description": "Tabla de tarifas en HTML real, leída de Impakto → Tarifas.",
+	"textdomain": "impakto",
+	"attributes": { "tabla": { "type": "string", "enum": ["estudio", "podcast", "edicion"], "default": "estudio" } },
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "tabla": "Tabla" }, "opciones": { "tabla": { "estudio": "Estudio: formatos y bloques de horas", "podcast": "Sala de podcast: paquetes por hora", "edicion": "Edición de podcast" } } }
+}

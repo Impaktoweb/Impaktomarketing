@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/cotizador",
+	"title": "Cotizador",
+	"category": "impakto",
+	"description": "Cotizador en 3 pasos (estudio, sala de podcast o equipos) con resumen siempre visible, envío a WhatsApp o por correo.",
+	"textdomain": "impakto",
+	"attributes": {
+		"tipo": { "type": "string", "enum": [ "estudio", "podcast", "equipos" ], "default": "estudio" }
+	},
+	"supports": { "html": false, "className": true, "multiple": false, "anchor": true },
+	"editorScript": "impakto-bloques-editor",
+	"style": "impakto-cotizador",
+	"viewScriptModule": "impakto-cotizador",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "tipo": "Configuración" }, "opciones": { "tipo": { "estudio": "Estudio audiovisual", "podcast": "Sala de podcast", "equipos": "Alquiler de equipos" } } }
+}

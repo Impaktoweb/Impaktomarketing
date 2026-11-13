@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/precio-desde",
+	"title": "Precio desde",
+	"category": "impakto",
+	"description": "Chip grande con el precio desde de Impakto → Tarifas (estudio o sala de podcast).",
+	"textdomain": "impakto",
+	"attributes": { "tipo": { "type": "string", "enum": ["estudio", "podcast"], "default": "estudio" } },
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "tipo": "Espacio" }, "opciones": { "tipo": { "estudio": "Estudio", "podcast": "Sala de podcast" } } }
+}

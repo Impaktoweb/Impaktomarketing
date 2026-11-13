@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/chips-equipos",
+	"title": "Chips de precio de equipos",
+	"category": "impakto",
+	"description": "Precios desde por categoría (cámaras, lentes, iluminación, micrófonos).",
+	"textdomain": "impakto",
+	"attributes": {},
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": {}
+}

@@ -101,3 +101,20 @@ document.querySelectorAll( '.rank-math-list-item' ).forEach( ( item, i ) => {
 		boton.setAttribute( 'aria-expanded', String( abierta ) );
 	} );
 } );
+
+/* --- Lightbox de galerías (dialog nativo) --- */
+const enlacesGaleria = document.querySelectorAll( '[data-lightbox]' );
+if ( enlacesGaleria.length ) {
+	const caja = document.createElement( 'dialog' );
+	caja.className = 'lightbox';
+	caja.innerHTML = '<button type="button" class="lightbox__cerrar" aria-label="Cerrar">×</button><img alt="">';
+	document.body.append( caja );
+	const img = caja.querySelector( 'img' );
+	caja.addEventListener( 'click', ( e ) => ( e.target === caja || e.target.closest( '.lightbox__cerrar' ) ) && caja.close() );
+	enlacesGaleria.forEach( ( a ) => a.addEventListener( 'click', ( e ) => {
+		e.preventDefault();
+		img.src = a.href;
+		img.alt = a.querySelector( 'img' )?.alt || '';
+		caja.showModal();
+	} ) );
+}

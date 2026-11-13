@@ -358,9 +358,15 @@ function impakto_sembrar_paginas( $forzar ) {
 		array( 'guia-de-estilo', 'Guía de estilo', $patron( 'impakto/pagina-guia-estilo' ), 'page-sin-titulo' ),
 		array( 'servicios', 'Servicios', $patron( 'impakto/pagina-servicios' ), 'page-sin-titulo' ),
 		array( 'nosotros', 'Nosotros', $patron( 'impakto/pagina-nosotros' ), 'page-sin-titulo' ),
+		array( 'estudio', 'Estudio audiovisual', $patron( 'impakto/pagina-estudio' ), 'page-sin-titulo' ),
+		array( 'sala-de-podcast', 'Sala de podcast', $patron( 'impakto/pagina-sala-de-podcast' ), 'page-sin-titulo' ),
+		array( 'alquiler-de-equipos', 'Alquiler de equipos', $patron( 'impakto/pagina-alquiler-de-equipos' ), 'page-sin-titulo' ),
 	);
 	$seo = array(
 		'servicios' => array( 'Servicios de marketing digital y branding en Manizales | Impakto', 'Investigación, naming, branding, producción audiovisual, pauta digital, web, SEO y CRM. Todo el proceso comercial con un solo aliado en Manizales.', 'servicios de marketing digital Manizales' ),
+		'estudio'             => array( 'Alquiler de estudio audiovisual y fotográfico en Manizales | Impakto', 'Estudio con sinfín en U de 90 m² o medio estudio de 45 m², desde $120.000 por hora. Iluminación, maquillaje y equipos. Cotiza en línea.', 'alquiler de estudio audiovisual Manizales' ),
+		'sala-de-podcast'     => array( 'Alquiler de sala de podcast en Manizales desde $180.000 | Impakto', 'Sala de podcast insonorizada de 24 m² con micrófonos y consolas Rode, hasta 3 cámaras y acompañamiento técnico. Desde $180.000 la hora.', 'alquiler sala de podcast Manizales' ),
+		'alquiler-de-equipos' => array( 'Alquiler de equipos audiovisuales en Manizales | Impakto', 'Renta cámaras Sony, drones DJI, iluminación Nanlite, micrófonos, estabilizadores y grip en Manizales. Arma tu cotización en línea.', 'alquiler de equipos audiovisuales Manizales' ),
 		'nosotros'  => array( 'Nosotros: The Marketing Factory de Manizales | Impakto Marketing', 'Somos una agencia de Manizales que combina mercadeo, investigación, producción audiovisual y conocimiento del cerebro humano para generar resultados.', 'agencia de marketing Manizales' ),
 	);
 	$ids = array();

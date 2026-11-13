@@ -30,7 +30,12 @@ $impakto_core_includes = array(
 	'ajustes',
 	'ajustes-tarifas',
 	'migracion-tarifas',
+	'leads-db',
+	'cotizacion',
+	'antispam',
+	'correos',
 	'rest-api',
+	'rest-solicitudes',
 	'roles',
 );
 foreach ( $impakto_core_includes as $impakto_core_file ) {
@@ -62,6 +67,7 @@ register_activation_hook(
 		impakto_registrar_cpt_proyecto();
 		impakto_registrar_cpt_equipo();
 		impakto_roles_activar();
+		impakto_crear_tabla_solicitudes();
 		if ( false === get_option( 'impakto_ajustes' ) ) {
 			add_option( 'impakto_ajustes', impakto_ajustes_defecto() );
 		}

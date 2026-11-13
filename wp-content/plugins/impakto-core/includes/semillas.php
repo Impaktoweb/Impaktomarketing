@@ -369,12 +369,15 @@ function impakto_sembrar_paginas( $forzar ) {
 		array( 'estudio', 'Estudio audiovisual', $patron( 'impakto/pagina-estudio' ), 'page-sin-titulo' ),
 		array( 'sala-de-podcast', 'Sala de podcast', $patron( 'impakto/pagina-sala-de-podcast' ), 'page-sin-titulo' ),
 		array( 'alquiler-de-equipos', 'Alquiler de equipos', $patron( 'impakto/pagina-alquiler-de-equipos' ), 'page-sin-titulo' ),
+		array( 'contacto', 'Contacto', $patron( 'impakto/pagina-contacto' ), 'page-sin-titulo' ),
+		array( 'gracias', 'Gracias', $patron( 'impakto/pagina-gracias' ), 'page-sin-titulo' ),
 	);
 	$seo = array(
 		'servicios' => array( 'Servicios de marketing digital y branding en Manizales | Impakto', 'Investigación, naming, branding, producción audiovisual, pauta digital, web, SEO y CRM. Todo el proceso comercial con un solo aliado en Manizales.', 'servicios de marketing digital Manizales' ),
 		'estudio'             => array( 'Alquiler de estudio audiovisual y fotográfico en Manizales | Impakto', 'Estudio con sinfín en U de 90 m² o medio estudio de 45 m², desde $120.000 por hora. Iluminación, maquillaje y equipos. Cotiza en línea.', 'alquiler de estudio audiovisual Manizales' ),
 		'sala-de-podcast'     => array( 'Alquiler de sala de podcast en Manizales desde $180.000 | Impakto', 'Sala de podcast insonorizada de 24 m² con micrófonos y consolas Rode, hasta 3 cámaras y acompañamiento técnico. Desde $180.000 la hora.', 'alquiler sala de podcast Manizales' ),
 		'alquiler-de-equipos' => array( 'Alquiler de equipos audiovisuales en Manizales | Impakto', 'Renta cámaras Sony, drones DJI, iluminación Nanlite, micrófonos, estabilizadores y grip en Manizales. Arma tu cotización en línea.', 'alquiler de equipos audiovisuales Manizales' ),
+		'contacto'            => array( 'Contacto | Impakto Marketing, agencia en Manizales', 'Visítanos en Cra. 22 #35-62, Manizales, o escríbenos por WhatsApp al +57 312 552 5901. Agencia de marketing, estudio y sala de podcast.', 'contacto agencia de marketing Manizales' ),
 		'nosotros'  => array( 'Nosotros: The Marketing Factory de Manizales | Impakto Marketing', 'Somos una agencia de Manizales que combina mercadeo, investigación, producción audiovisual y conocimiento del cerebro humano para generar resultados.', 'agencia de marketing Manizales' ),
 	);
 	$ids = array();
@@ -509,4 +512,36 @@ function impakto_sembrar_contenido_articulos( $forzar ) {
 		++$n;
 	}
 	return "$n artículos con contenido";
+}
+
+/**
+ * Páginas legales (contenido/legal/, convertidas a bloques en data/legales/). Borradores para
+ * revisión del asesor legal antes de publicar en producción. [CONFIRMAR revisión legal].
+ *
+ * @param bool $forzar Reemplazar el contenido.
+ * @return string
+ */
+function impakto_sembrar_legales( $forzar ) {
+	$dir  = IMPAKTO_CORE_PATH . 'data/legales/';
+	$meta = json_decode( (string) file_get_contents( $dir . 'legales.json' ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+	$n    = 0;
+	foreach ( (array) $meta as $slug => $m ) {
+		$id = impakto_semilla_entrada(
+			array(
+				'post_type'     => 'page',
+				'post_name'     => $slug,
+				'post_title'    => $m['titulo'],
+				'post_content'  => file_get_contents( $dir . $slug . '.html' ), // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+				'post_status'   => 'publish',
+				'page_template' => 'page-legal',
+			),
+			$forzar
+		);
+		if ( is_int( $id ) ) {
+			update_post_meta( $id, 'rank_math_title', $m['seo_title'] );
+			update_post_meta( $id, 'rank_math_description', $m['seo_desc'] );
+			++$n;
+		}
+	}
+	return "$n páginas legales";
 }

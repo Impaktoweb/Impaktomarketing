@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/mapa",
+	"title": "Mapa con clic",
+	"category": "impakto",
+	"description": "Imagen estática con botón Ver mapa: Google Maps carga solo cuando la persona lo pide.",
+	"textdomain": "impakto",
+	"attributes": { "imagen": { "type": "number", "default": 0 } },
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "imagen": "Id de la imagen estática del mapa (1600 × 700)" } }
+}

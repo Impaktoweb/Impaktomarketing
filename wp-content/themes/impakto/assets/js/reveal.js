@@ -130,3 +130,16 @@ document.querySelectorAll( '[data-video]' ).forEach( ( caja ) => {
 		caja.replaceChildren( iframe );
 	} );
 } );
+
+/* --- Mapa con clic (Google Maps carga solo cuando se pide) --- */
+document.querySelectorAll( '[data-mapa]' ).forEach( ( caja ) => {
+	caja.querySelector( 'button' )?.addEventListener( 'click', () => {
+		const iframe = document.createElement( 'iframe' );
+		iframe.src = caja.dataset.mapa;
+		iframe.title = 'Mapa de ubicación de Impakto Marketing';
+		iframe.loading = 'lazy';
+		iframe.referrerPolicy = 'no-referrer-when-downgrade';
+		caja.replaceChildren( iframe );
+		caja.classList.add( 'mapa--activo' );
+	} );
+} );

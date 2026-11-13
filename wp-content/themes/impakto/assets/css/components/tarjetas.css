@@ -332,3 +332,44 @@
 .toc summary { list-style: none; }
 .toc summary::-webkit-details-marker { display: none; }
 @media (max-width: 1023px) { .toc summary::after { content: " +"; color: var(--c-acento-texto); } .toc details[open] summary::after { content: " −"; } }
+
+/* Contacto */
+.contacto-tarjetas { display: grid; gap: var(--s-4); margin: 0; padding: 0; list-style: none; }
+@media (min-width: 640px) { .contacto-tarjetas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .contacto-tarjetas { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } }
+.contacto-tarjetas > li { margin: 0 !important; }
+.contacto-tarjeta { display: flex; flex-direction: column; gap: var(--s-2); padding: var(--s-5); border: var(--linea); border-radius: var(--r-tarjeta); background: var(--white); }
+.contacto-tarjeta .icono { color: var(--c-acento-texto); }
+.contacto-tarjeta__titulo { margin: var(--s-3) 0 0; font-size: 18px !important; }
+.contacto-tarjeta p { margin: 0; color: var(--c-titulo); }
+.contacto-tarjeta a:not(.boton) { color: var(--c-titulo); font-weight: 600; }
+.contacto-tarjeta .boton { margin-top: auto; align-self: flex-start; }
+.contacto-tarjeta--destacada { background: var(--graphite-900); border-color: var(--graphite-900); }
+.contacto-tarjeta--destacada .contacto-tarjeta__titulo, .contacto-tarjeta--destacada p { color: var(--white); }
+.contacto-tarjeta--destacada .icono { color: var(--orange-500); }
+.mapa { position: relative; overflow: hidden; border-radius: var(--r-tarjeta); background: var(--graphite-900); }
+.mapa__imagen { display: block; width: 100%; min-height: 320px; aspect-ratio: 16 / 7; object-fit: cover; }
+.mapa__capa { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 12px; padding: var(--s-5); text-align: center; color: var(--white); background: rgba(17, 17, 16, 0.45); }
+.mapa__capa p { margin: 0; color: var(--white); font-weight: 600; }
+.mapa__capa .is-style-nota { color: var(--c-sobre-oscuro-suave); font-weight: 400; }
+.mapa iframe { display: block; width: 100%; height: clamp(320px, 45vw, 520px); border: 0; }
+.formulario { max-width: 760px; }
+.formulario__fila { display: grid; gap: 0 var(--s-4); }
+@media (min-width: 640px) { .formulario__fila { grid-template-columns: 1fr 1fr; } }
+.formulario textarea.campo__input { min-height: 140px; resize: vertical; }
+.formulario select.campo__input { appearance: auto; }
+.campo__error { margin: 0; color: #8C1D18; font-size: 13px; }
+.formulario__error { margin: 0 0 var(--s-4); padding: 12px 16px; border-left: 3px solid #B3261E; background: #FCEEEE; color: #8C1D18; font-size: var(--t-sm); }
+.formulario [aria-invalid="true"] { border-color: #B3261E; }
+.formulario[aria-busy="true"] { opacity: 0.7; }
+
+/* Páginas legales: numeración "01 |" de la marca */
+.legal__hero h1 { max-width: 22ch; font-size: clamp(32px, 4.2vw, 56px); }
+.legal__fecha { gap: 6px; color: var(--gray-600); font-size: var(--t-sm); }
+.legal__fecha p { margin: 0; }
+.legal__contenido h2 { font-size: clamp(22px, 1.4vw + 14px, 28px); font-weight: 600; padding-left: 0; }
+.legal__contenido h2::first-line { color: var(--c-titulo); }
+.legal .toc a::before { content: counter(toc, decimal-leading-zero) " | "; }
+.redes--claras { margin-top: auto !important; padding: 0; }
+.redes--claras a { border-color: var(--gray-300) !important; color: var(--c-titulo) !important; }
+.redes--claras a:hover { border-color: var(--orange-500) !important; color: var(--c-acento-texto) !important; }

@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/contacto-tarjetas",
+	"title": "Tarjetas de contacto",
+	"category": "impakto",
+	"description": "WhatsApp, teléfono, correo, dirección y horario desde Impakto → Ajustes, con clics medibles.",
+	"textdomain": "impakto",
+	"attributes": {},
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": {}
+}

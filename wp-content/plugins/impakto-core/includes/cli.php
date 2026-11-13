@@ -82,7 +82,7 @@ class Impakto_CLI {
 		require_once IMPAKTO_CORE_PATH . 'includes/semillas-servicios.php';
 		$solo   = $assoc['solo'] ?? '';
 		$forzar = isset( $assoc['forzar'] );
-		foreach ( array( 'articulos', 'contenido-articulos', 'servicios', 'contenido-servicios', 'proyectos', 'paginas', 'menus' ) as $tipo ) {
+		foreach ( array( 'articulos', 'contenido-articulos', 'servicios', 'contenido-servicios', 'proyectos', 'paginas', 'legales', 'menus' ) as $tipo ) {
 			if ( $solo && $solo !== $tipo ) {
 				continue;
 			}

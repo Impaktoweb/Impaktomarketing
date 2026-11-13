@@ -36,6 +36,8 @@ $impakto_core_includes = array(
 	'correos',
 	'rest-api',
 	'rest-solicitudes',
+	'rest-contacto',
+	'leads-admin',
 	'roles',
 );
 foreach ( $impakto_core_includes as $impakto_core_file ) {

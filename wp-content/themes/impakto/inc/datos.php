@@ -126,3 +126,40 @@ function impakto_contexto_pagina() {
 	$contexto = apply_filters( 'impakto_contexto_pagina', $contexto );
 	return $contexto;
 }
+
+/**
+ * [impakto_correo prefijo="" respaldo=""]: correo público de Impakto → Ajustes (o el texto de respaldo).
+ */
+add_shortcode(
+	'impakto_correo',
+	static function ( $atts ) {
+		$atts   = shortcode_atts(
+			array(
+				'prefijo'  => '',
+				'respaldo' => '',
+			),
+			$atts
+		);
+		$correo = impakto_dato( 'correo_publico' );
+		if ( ! $correo ) {
+			return esc_html( $atts['respaldo'] );
+		}
+		return esc_html( $atts['prefijo'] ) . '<a href="mailto:' . esc_attr( antispambot( $correo ) ) . '" data-evento="click_email" data-ubicacion="legal">' . esc_html( antispambot( $correo ) ) . '</a>';
+	}
+);
+
+/**
+ * [impakto_fecha_publicacion]: fecha de publicación de la página actual.
+ */
+add_shortcode(
+	'impakto_fecha_publicacion',
+	static fn() => esc_html( get_the_date( get_option( 'date_format' ) ) )
+);
+
+/**
+ * [impakto_fecha_actualizacion]: "Última actualización: 13 de noviembre de 2026".
+ */
+add_shortcode(
+	'impakto_fecha_actualizacion',
+	static fn() => '<p class="legal__fecha">' . esc_html__( 'Última actualización:', 'impakto' ) . ' <time datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date( get_option( 'date_format' ) ) ) . '</time></p>'
+);

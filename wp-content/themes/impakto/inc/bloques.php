@@ -29,6 +29,7 @@ add_action(
 
 		// Cotizador: estilos y módulo solo en las páginas que lo usan.
 		wp_register_style( 'impakto-cotizador', IMPAKTO_TEMA_URL . '/assets/css/components/cotizador.css', array(), impakto_version_archivo( 'assets/css/components/cotizador.css' ) );
+		wp_register_script_module( 'impakto-formulario', IMPAKTO_TEMA_URL . '/assets/js/formulario.js', array(), impakto_version_archivo( 'assets/js/formulario.js' ) );
 		wp_register_script_module( 'impakto-cotizador', IMPAKTO_TEMA_URL . '/assets/js/cotizador.js', array(), impakto_version_archivo( 'assets/js/cotizador.js' ) );
 
 		$controles = array();

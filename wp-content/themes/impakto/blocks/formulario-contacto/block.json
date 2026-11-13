@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/formulario-contacto",
+	"title": "Formulario de contacto",
+	"category": "impakto",
+	"description": "Formulario de la página Contacto: guarda la solicitud, avisa a CEO y KAM y lleva a /gracias/.",
+	"textdomain": "impakto",
+	"attributes": {},
+	"supports": { "html": false, "className": true, "multiple": false },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php", "viewScriptModule": "impakto-formulario",
+	"impakto": {}
+}

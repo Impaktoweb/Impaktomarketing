@@ -23,6 +23,7 @@ function impakto_hojas_globales() {
 		'impakto-header'     => 'assets/css/components/header.css',
 		'impakto-menu-movil' => 'assets/css/components/menu-movil.css',
 		'impakto-footer'     => 'assets/css/components/footer.css',
+		'impakto-formularios' => 'assets/css/components/formularios.css',
 	);
 }
 
@@ -49,7 +50,7 @@ add_action(
 			wp_enqueue_style( 'impakto-guia', IMPAKTO_TEMA_URL . '/assets/css/guia.css', $anterior, impakto_version_archivo( 'assets/css/guia.css' ) );
 		}
 
-		foreach ( array( 'menu', 'reveal' ) as $modulo ) {
+		foreach ( array( 'menu', 'reveal', 'consent', 'tracking' ) as $modulo ) {
 			$ruta = 'assets/js/' . $modulo . '.js';
 			wp_enqueue_script_module( 'impakto-' . $modulo, IMPAKTO_TEMA_URL . '/' . $ruta, array(), impakto_version_archivo( $ruta ) );
 		}

@@ -34,7 +34,7 @@ function impakto_ancla( $texto ) {
 add_filter(
 	'render_block_core/heading',
 	static function ( $html, $bloque ) {
-		if ( ! is_singular( 'post' ) || 2 !== (int) ( $bloque['attrs']['level'] ?? 2 ) || str_contains( $html, ' id="' ) ) {
+		if ( ! ( is_singular( 'post' ) || ( is_page() && 'page-legal' === get_page_template_slug() ) ) || 2 !== (int) ( $bloque['attrs']['level'] ?? 2 ) || str_contains( $html, ' id="' ) ) {
 			return $html;
 		}
 		$texto = wp_strip_all_tags( $html );
@@ -56,7 +56,7 @@ function impakto_indice_articulo( $post_id ) {
 		if ( 'core/heading' === $b['blockName'] && 2 === (int) ( $b['attrs']['level'] ?? 2 ) ) {
 			$texto    = trim( wp_strip_all_tags( $b['innerHTML'] ) );
 			$salida[] = array(
-				'texto' => $texto,
+				'texto' => trim( preg_replace( '/^\d+\s*\|\s*/', '', $texto ) ), // "01 | Reprogramaciones" → "Reprogramaciones".
 				'ancla' => impakto_ancla( $texto ),
 			);
 		}

@@ -133,7 +133,8 @@ a:hover { color: var(--c-oscuro); }
 .is-layout-constrained > .encabezado-seccion:not(.is-centrado),
 .is-layout-constrained > .alinear-izquierda,
 .is-layout-constrained > .is-style-bajada:not(.has-text-align-center),
-.is-style-hero-oscuro.is-layout-constrained > :is(h1, h2, p) {
+.is-style-hero-oscuro.is-layout-constrained > :is(h1, h2, p),
+.is-style-hero-curvas.is-layout-constrained > :is(h1, h2, p) {
 	margin-left: max(0px, calc((100% - var(--ancho)) / 2)) !important;
 	margin-right: auto !important;
 }

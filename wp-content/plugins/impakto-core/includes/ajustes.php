@@ -76,13 +76,14 @@ add_action(
 		add_menu_page(
 			__( 'Impakto', 'impakto-core' ),
 			__( 'Impakto', 'impakto-core' ),
-			'manage_options',
+			'impakto_solicitudes',
 			'impakto',
-			'impakto_pantalla_ajustes',
+			'impakto_pantalla_solicitudes',
 			'data:image/svg+xml;base64,' . base64_encode( '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><defs><mask id="m"><circle cx="120" cy="120" r="118" fill="#fff"/><rect x="113" width="14" height="240"/><rect y="113" width="240" height="14"/><rect x="86" y="86" width="68" height="68" rx="13"/></mask></defs><rect width="240" height="240" fill="#a7aaad" mask="url(#m)"/></svg>' ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 			3
 		);
-		add_submenu_page( 'impakto', __( 'Ajustes', 'impakto-core' ), __( 'Ajustes', 'impakto-core' ), 'manage_options', 'impakto', 'impakto_pantalla_ajustes' );
+		add_submenu_page( 'impakto', __( 'Solicitudes', 'impakto-core' ), __( 'Solicitudes', 'impakto-core' ), 'impakto_solicitudes', 'impakto', 'impakto_pantalla_solicitudes' );
+		add_submenu_page( 'impakto', __( 'Ajustes', 'impakto-core' ), __( 'Ajustes', 'impakto-core' ), 'manage_options', 'impakto-ajustes', 'impakto_pantalla_ajustes' );
 	}
 );
 

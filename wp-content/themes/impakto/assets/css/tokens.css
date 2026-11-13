@@ -26,9 +26,8 @@
 	--c-texto: var(--gray-600);
 	--c-borde: var(--gray-300);
 	--c-acento: var(--orange-500);
-	--orange-600: #D46A00;   /* acento de títulos grandes sobre claro (≥ 3:1, WCAG texto grande) */
 	--c-acento-texto: #AD5300; /* texto naranja pequeño: ≥ 4,5:1 sobre blanco, papel y gris de sección */
-	--c-acento-titulo: var(--orange-600);
+	--c-acento-titulo: var(--orange-500); /* títulos y números: naranja del logo también sobre claro (decisión de marca) */
 	--c-sobre-oscuro: rgba(255, 255, 255, 0.92);
 	--c-sobre-oscuro-suave: rgba(255, 255, 255, 0.68);
 	--c-borde-oscuro: rgba(255, 255, 255, 0.16);

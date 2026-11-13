@@ -16,7 +16,7 @@ Commits por fase: `d34dcd4` (1) · `dc9cb34` (2) · `d08b1ca` + `be7f67b` (3) ·
 | Banner de cookies: nada de analítica antes de aceptar | ✅ Comprobado: sin GA4, Pixel ni cookie de campaña antes de decidir; con "solo analítica" carga GA4 y no el Pixel. Consent Mode v2 por defecto `denied`. |
 | Redirecciones §14 | ✅ `/portfolio-item/{slug}/`, `/portafolio-item/{slug}/`, `/portafolio-categoria/{slug}/`, `/portfolio/`, `/hello-world/`, `/user-interface-graphic-design/`, `/category/{slug}/` → 301 al destino correcto. Anclas `/servicios#branding` → `/servicios/branding/` por JS. |
 | Revisión visual a 375, 768 y 1440 px | ✅ Todas las plantillas revisadas en cada fase; ninguna con desbordamiento horizontal a 375 px. |
-| Accesibilidad | ✅ axe-core (WCAG 2.1 A/AA) en 13 plantillas a 375 y 1440 px: **0 violaciones**. Saltar al contenido, foco visible, teclado en menús, mega menú y diálogos, `label` en todos los campos, total del cotizador con `aria-live`, `prefers-reduced-motion`. |
+| Accesibilidad | ⚠️ axe-core (WCAG 2.1 A/AA) en 13 plantillas a 375 y 1440 px: 0 violaciones antes de la decisión de marca del punto 3.1; con #FF8000 en los títulos sobre fondo claro, axe vuelve a marcar el contraste de esos títulos y números (2,5:1). Resto sin violaciones: Saltar al contenido, foco visible, teclado en menús, mega menú y diálogos, `label` en todos los campos, total del cotizador con `aria-live`, `prefers-reduced-motion`. |
 | Lista final de `[CONFIRMAR]` | ✅ Sección 4. |
 
 ## 2. Entregables
@@ -27,14 +27,14 @@ Commits por fase: `d34dcd4` (1) · `dc9cb34` (2) · `d08b1ca` + `be7f67b` (3) ·
 - `INSTALACION-STAGING.md` — paso a paso en Hostinger. `README.md` — estructura y cómo editar.
 - `wp-content/themes/impakto/contenido/GUIA-PUBLICAR-ARTICULO.md` — guía para el equipo.
 
-## 3. Cambios respecto a los textos y al BRIEF (para aprobar)
-1. **Contraste del naranja:** #FF8000 sobre fondos claros da 2,5:1 (no cumple ni en texto grande). Se mantiene en botones, líneas y sobre fondos oscuros; sobre claro los títulos usan **#D46A00** y el texto pequeño **#AD5300** (en vez de #B35600, que no llega a 4,5:1 sobre el gris de sección).
+## 3. Cambios respecto a los textos y al BRIEF (aprobados por Impakto el 13/11/2026)
+1. **Naranja en títulos (decisión de marca):** los títulos y números sobre fondo claro usan el naranja del logo **#FF8000**, como en los PDF de la marca. Contraste 2,5:1: por debajo de WCAG AA, así que axe y Lighthouse lo marcarán y la puntuación de Accesibilidad puede quedar bajo 95. El texto naranja pequeño (enlaces, etiquetas) sí usa **#AD5300** para seguir siendo legible.
 2. **Sección naranja** con texto grafito (el blanco sobre naranja no cumple WCAG).
 3. **Podcast:** "hasta 4 cámaras" → "hasta 3 cámaras" (Inicio y meta descripción), coherente con los paquetes.
 4. **Líneas de tiempo:** se quitaron los dos puntos tras cada título y el texto empieza con mayúscula. "Para quién" con mayúscula inicial.
 5. **Títulos de sección** agregados donde el `.md` solo nombraba la sección ("Qué incluye", "Cómo lo hacemos", "¿Para quién es?", "Lo que más nos preguntan", "Reserva en 3 pasos", "Condiciones clave"…) y textos de interfaz (mensajes de WhatsApp precargados por página, botones, confirmaciones, `/gracias/`, banner de cookies).
 6. **Secciones sin texto aprobado no se publican** (no se inventó contenido): "Qué incluye" de Naming; "Cómo lo hacemos" de Fotografía, Diseño, Redes, Pauta, Web y CRM; algunas "Para quién" y FAQ.
-7. **Legales:** anticipo **20 %** y saldo **al finalizar el servicio** (tomados del PDF de Términos & condiciones); el correo se muestra desde Ajustes (si falta, remite a WhatsApp); vigencia = fecha de publicación; se retiraron las notas internas `[CONFIRMAR]` del texto visible.
+7. **Legales (revisión legal hecha):** anticipo **20 %** y saldo **al finalizar el servicio** (tomados del PDF de Términos & condiciones); el correo se muestra desde Ajustes (si falta, remite a WhatsApp); vigencia = fecha de publicación; se retiraron las notas internas `[CONFIRMAR]` del texto visible.
 8. **Blog:** autor "Equipo Impakto" para los 5 artículos; se omitió la pregunta del parqueadero (sin respuesta); las respuestas del FAQ de los artículos quedaron sin enlaces.
 9. **Cotizador:** equipos sin precio no se muestran; productor en alquiler de equipos = jornada de 8 h "sujeto a confirmación"; kits = suma de sus equipos; podcast con equipos adicionales de micrófonos, teleprompters e iluminación.
 10. **Portafolio:** solo 4 proyectos marcados "Destacado" (Inicio muestra 4, no 5–6).
@@ -55,7 +55,7 @@ Commits por fase: `d34dcd4` (1) · `dc9cb34` (2) · `d08b1ca` + `be7f67b` (3) ·
 - [ ] PDF "Plantilla de cotización Estudio y Podcast" (no llegó).
 
 **Tarifas y alquiler**
-- [ ] Anticipo: 20 % (Términos) vs. 100 %/50 % (contrato); penalidad del 50 % por cancelar con menos de 24 h.
+- [x] Anticipo del 20 % y saldo al finalizar (aprobado). Pendiente solo: penalidad del 50 % del contrato por cancelar con menos de 24 h.
 - [ ] Unidad del precio de equipos (se usó **jornada**).
 - [ ] Precios de los 14 equipos en borrador y de los dos lentes "???".
 - [ ] Medida del sinfín: 12 × 4 m o 10 × 4 m ("4 × 10 m" en Sobre Impakto; "más de 100 m², total 350 m²" en la portada de Términos).
@@ -69,11 +69,10 @@ Commits por fase: `d34dcd4` (1) · `dc9cb34` (2) · `d08b1ca` + `be7f67b` (3) ·
 - [ ] Animación 3D y Desarrollo de producto (en borrador): ¿siguen activos?
 - [ ] Alcance del registro de naming ante la SIC; cobertura geográfica de producción.
 - [ ] Autorización para nombrar instituciones de formación en Nosotros.
-- [ ] Autores con nombre para los artículos 3, 4 y 5 (o confirmar "Equipo Impakto").
+- [x] Autor de los artículos: "Equipo Impakto" (aprobado).
 - [ ] Proyectos del sitio anterior que se migran; resultados de Bôma; video de Mesa de Yeguas y enlaces de reels; testimonios.
 - [ ] Landing `/marketing-inmobiliario/` (solo hay títulos de sección en `servicios.md`).
 - [ ] Parqueadero (FAQ del artículo del estudio).
-- [ ] **Revisión legal** de las 5 páginas legales antes de producción.
 
 ## 5. Notas técnicas para producción
 - El nonce de los formularios se pide fresco (`/wp-json/impakto/v1/nonce`), así que LiteSpeed puede cachear las páginas con cotizador.

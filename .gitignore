@@ -1,6 +1,9 @@
 # Repositorio: solo el tema y el plugin propios (BRIEF §1)
 /*
 !/.gitignore
+!/README.md
+!/INSTALACION-STAGING.md
+!/REPORTE-FINAL.md
 !/wp-content/
 /wp-content/*
 !/wp-content/themes/

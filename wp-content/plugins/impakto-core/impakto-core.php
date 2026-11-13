@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Impakto Core
  * Description:       Datos y lógica del sitio de Impakto Marketing: servicios, portafolio, equipos, tarifas, cotizaciones y solicitudes.
- * Version:           0.1.0
+ * Version:           1.0.0
  * Requires at least: 6.6
  * Requires PHP:      8.1
  * Author:            Impakto Marketing S.A.S.
@@ -14,7 +14,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'IMPAKTO_CORE_VERSION', '0.1.0' );
+define( 'IMPAKTO_CORE_VERSION', '1.0.0' );
 define( 'IMPAKTO_CORE_FILE', __FILE__ );
 define( 'IMPAKTO_CORE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'IMPAKTO_CORE_URL', plugin_dir_url( __FILE__ ) );

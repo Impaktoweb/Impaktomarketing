@@ -34,3 +34,27 @@ function impakto_validar_antispam( $req ) {
 	set_transient( $clave, $conteo + 1, HOUR_IN_SECONDS );
 	return true;
 }
+
+/**
+ * GET /wp-json/impakto/v1/nonce — nonce fresco y sin caché. Los formularios lo piden justo antes
+ * de enviar, así funcionan aunque LiteSpeed Cache sirva una página guardada hace días.
+ */
+add_action(
+	'rest_api_init',
+	static function () {
+		register_rest_route(
+			'impakto/v1',
+			'/nonce',
+			array(
+				'methods'             => WP_REST_Server::READABLE,
+				'permission_callback' => '__return_true',
+				'callback'            => static function () {
+					$r = rest_ensure_response( array( 'nonce' => wp_create_nonce( 'wp_rest' ) ) );
+					$r->header( 'Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0' );
+					$r->header( 'X-LiteSpeed-Cache-Control', 'no-cache' );
+					return $r;
+				},
+			)
+		);
+	}
+);

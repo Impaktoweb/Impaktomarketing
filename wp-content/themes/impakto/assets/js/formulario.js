@@ -37,9 +37,14 @@ if ( form ) {
 		form.setAttribute( 'aria-busy', 'true' );
 		error.hidden = true;
 		try {
+			let nonce = cfg.nonce;
+			try {
+				nonce = ( await ( await fetch( cfg.rest.replace( /contacto$/, 'nonce' ), { cache: 'no-store', credentials: 'omit' } ) ).json() ).nonce || nonce;
+			} catch {}
 			const resp = await fetch( cfg.rest, {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json', 'X-WP-Nonce': cfg.nonce },
+				credentials: 'omit',
+				headers: { 'Content-Type': 'application/json', 'X-WP-Nonce': nonce },
 				body: JSON.stringify( { ...datos, acepta: true, tiempo: Math.round( ( Date.now() - T0 ) / 1000 ), pagina: location.href, utm: window.impaktoUTM || {} } ),
 			} );
 			const r = await resp.json();

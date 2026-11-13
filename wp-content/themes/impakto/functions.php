@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'IMPAKTO_TEMA_VERSION', '0.1.0' );
+define( 'IMPAKTO_TEMA_VERSION', '1.0.0' );
 define( 'IMPAKTO_TEMA_PATH', get_template_directory() );
 define( 'IMPAKTO_TEMA_URL', get_template_directory_uri() );
 

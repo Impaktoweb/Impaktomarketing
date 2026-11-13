@@ -11,6 +11,16 @@ const cop = ( n, moneda = true ) => '$' + Math.round( n ).toLocaleString( 'es-CO
 const esc = ( s ) => String( s ?? '' ).replace( /[&<>"']/g, ( c ) => ( { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ c ] ) );
 const plural = ( n, uno, varios ) => `${ n } ${ n === 1 ? uno : varios }`;
 
+/** Nonce fresco (las páginas pueden venir de la caché de LiteSpeed). */
+async function nonceFresco( rest, respaldo ) {
+	try {
+		const r = await fetch( rest.replace( /solicitudes$/, 'nonce' ), { cache: 'no-store', credentials: 'omit' } );
+		return ( await r.json() ).nonce || respaldo;
+	} catch {
+		return respaldo;
+	}
+}
+
 /** Analítica: dataLayer (tracking.js de la Fase 5 lo envía a GA4 y Meta con consentimiento). */
 function evento( nombre, datos = {} ) {
 	window.dataLayer = window.dataLayer || [];
@@ -475,9 +485,11 @@ class Cotizador {
 
 		const s = this.s;
 		try {
+			const nonce = await nonceFresco( this.c.rest, this.c.nonce );
 			const resp = await fetch( this.c.rest, {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json', 'X-WP-Nonce': this.c.nonce },
+				credentials: 'omit', // Envío anónimo: el nonce fresco se creó sin sesión.
+				headers: { 'Content-Type': 'application/json', 'X-WP-Nonce': nonce },
 				body: JSON.stringify( {
 					tipo: this.tipo,
 					accion,

@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/blog-listado",
+	"title": "Blog: listado",
+	"category": "impakto",
+	"description": "Encabezado del blog (o de la categoría / autor), chips de categorías, tarjetas y paginación. Usa la consulta de la página.",
+	"textdomain": "impakto",
+	"attributes": {},
+	"supports": { "html": false, "inserter": false, "multiple": false },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": {}
+}

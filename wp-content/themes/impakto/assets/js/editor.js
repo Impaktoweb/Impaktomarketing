@@ -69,6 +69,18 @@
 		} );
 	} );
 
+	// "Respuesta rápida" como bloque propio en el insertor (párrafo con el estilo AEO).
+	wp.blocks.registerBlockVariation( 'core/paragraph', {
+		name: 'impakto-respuesta-rapida',
+		title: __( 'Respuesta rápida', 'impakto' ),
+		description: __( 'Resumen de 2 o 3 líneas al inicio del artículo: qué es, para quién, cuánto y dónde.', 'impakto' ),
+		category: 'impakto',
+		icon: 'lightbulb',
+		attributes: { className: 'is-style-respuesta-rapida', placeholder: __( 'Escribe la respuesta directa en 2 o 3 líneas…', 'impakto' ) },
+		scope: [ 'inserter' ],
+		isActive: ( a ) => ( a.className || '' ).includes( 'is-style-respuesta-rapida' ),
+	} );
+
 	// Formato "Resaltado naranja" para el patrón bicolor de los títulos.
 	registerFormatType( 'impakto/acento', {
 		title: __( 'Resaltado naranja', 'impakto' ),

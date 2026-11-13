@@ -83,6 +83,31 @@ function impakto_campos() {
 				'tipo'     => 'lineas',
 				'ayuda'    => __( 'El primero se muestra como cifra principal en la tarjeta. Ej.: ROAS | 836 | Constructora Hungría, ene 2026', 'impakto-core' ),
 			),
+			'reto'             => array(
+				'etiqueta' => __( 'Reto (2-3 líneas)', 'impakto-core' ),
+				'tipo'     => 'textarea',
+			),
+			'solucion'         => array(
+				'etiqueta' => __( 'Solución (una viñeta por línea; "Título: texto" pone el título en negrita)', 'impakto-core' ),
+				'tipo'     => 'lineas',
+			),
+			'galeria'          => array(
+				'etiqueta' => __( 'Galería (ids de imágenes separados por coma)', 'impakto-core' ),
+				'tipo'     => 'text',
+				'ayuda'    => __( 'Lado largo 2000 px, menos de 500 KB. La portada es la imagen destacada.', 'impakto-core' ),
+			),
+			'video'            => array(
+				'etiqueta' => __( 'Video (URL de YouTube o Vimeo)', 'impakto-core' ),
+				'tipo'     => 'url',
+			),
+			'testimonio'       => array(
+				'etiqueta' => __( 'Testimonio (textual, con autorización)', 'impakto-core' ),
+				'tipo'     => 'textarea',
+			),
+			'testimonio_autor' => array(
+				'etiqueta' => __( 'Autor del testimonio (nombre y cargo)', 'impakto-core' ),
+				'tipo'     => 'text',
+			),
 		),
 		'equipo'   => array(
 			'precio'            => array(

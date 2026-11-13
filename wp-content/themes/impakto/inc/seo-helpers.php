@@ -20,7 +20,7 @@ function impakto_paginas_noindex() {
 add_filter(
 	'wp_robots',
 	static function ( $robots ) {
-		if ( is_page( impakto_paginas_noindex() ) ) {
+		if ( is_page( impakto_paginas_noindex() ) || get_query_var( 'caso' ) ) {
 			$robots['noindex']  = true;
 			$robots['nofollow'] = true;
 			unset( $robots['max-image-preview'] );
@@ -33,7 +33,7 @@ add_filter(
 add_filter(
 	'rank_math/frontend/robots',
 	static function ( $robots ) {
-		if ( is_page( impakto_paginas_noindex() ) ) {
+		if ( is_page( impakto_paginas_noindex() ) || get_query_var( 'caso' ) ) {
 			$robots['index']  = 'noindex';
 			$robots['follow'] = 'nofollow';
 		}

@@ -107,6 +107,22 @@ function impakto_contexto_pagina() {
 		);
 	}
 
+	if ( is_singular( 'proyecto' ) ) {
+		$terminos = get_the_terms( get_queried_object_id(), 'categoria-portafolio' );
+		$servicio = $terminos && ! is_wp_error( $terminos ) ? $terminos[0]->name : '';
+		$contexto = array_merge(
+			$contexto,
+			array(
+				/* translators: %s: servicio. */
+				'wa_mensaje'   => $servicio ? sprintf( __( 'Hola Impakto, quiero información sobre %s.', 'impakto' ), $servicio ) : $contexto['wa_mensaje'],
+				'servicio'     => $terminos && ! is_wp_error( $terminos ) ? $terminos[0]->slug : '',
+				'cta_texto'    => __( 'Ver más proyectos', 'impakto' ),
+				'cta_url'      => get_post_type_archive_link( 'proyecto' ),
+				'cta_selector' => false,
+			)
+		);
+	}
+
 	$contexto = apply_filters( 'impakto_contexto_pagina', $contexto );
 	return $contexto;
 }

@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/articulo-cabecera",
+	"title": "Artículo: encabezado",
+	"category": "impakto",
+	"description": "Categoría, H1, autor, fechas de publicación y actualización, tiempo de lectura e imagen destacada.",
+	"textdomain": "impakto",
+	"attributes": {},
+	"supports": { "html": false, "inserter": false, "multiple": false },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": {}
+}

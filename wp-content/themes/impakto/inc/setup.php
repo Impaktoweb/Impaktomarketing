@@ -73,6 +73,7 @@ add_action(
 				'kicker' => __( 'Etiqueta (kicker)', 'impakto' ),
 				'bajada' => __( 'Bajada', 'impakto' ),
 				'nota'   => __( 'Nota pequeña', 'impakto' ),
+				'respuesta-rapida' => __( 'Respuesta rápida (AEO)', 'impakto' ),
 			),
 			'core/heading'   => array( 'display' => __( 'Display de sección', 'impakto' ) ),
 			'core/list'      => array(

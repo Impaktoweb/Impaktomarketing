@@ -11,6 +11,10 @@ $impakto_cat = $attributes['categoria'];
 if ( ! $impakto_cat && is_singular( 'servicio' ) ) {
 	$impakto_cat = get_post_meta( get_the_ID(), '_impakto_categoria_portafolio', true );
 }
+if ( ! $impakto_cat && is_singular( 'proyecto' ) ) {
+	$impakto_terms = get_the_terms( get_queried_object_id(), 'categoria-portafolio' );
+	$impakto_cat   = $impakto_terms && ! is_wp_error( $impakto_terms ) ? $impakto_terms[0]->slug : '';
+}
 if ( ! $impakto_cat || ! taxonomy_exists( 'categoria-portafolio' ) ) {
 	return;
 }
@@ -19,7 +23,7 @@ $impakto_ids = get_posts(
 		'post_type'      => 'proyecto',
 		'post_status'    => 'publish',
 		'posts_per_page' => max( 1, (int) $attributes['cantidad'] ),
-		'post__not_in'   => is_singular( 'proyecto' ) ? array( get_the_ID() ) : array(),
+		'post__not_in'   => is_singular( 'proyecto' ) ? array( get_queried_object_id() ) : array(),
 		'orderby'        => array(
 			'menu_order' => 'ASC',
 			'date'       => 'DESC',

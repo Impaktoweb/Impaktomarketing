@@ -119,6 +119,7 @@ function impakto_sembrar_proyectos( $forzar ) {
 	$proyectos = array(
 		array(
 			'slug'       => 'constructora-hungria-ventas-digitales',
+			'solucion'   => implode( "\n", array( 'Redes: planeación de contenidos ligada a las necesidades del equipo comercial.', 'Sitio web: sitio estratégico con CTA a WhatsApp y formularios integrados con HubSpot.', 'CRM y WhatsApp: canal de ventas en HubSpot y WhatsApp Business con etiquetas por etapa del embudo y respuestas rápidas.', 'Ventas: speech por proyecto y etapa, con tiempos máximos, y capacitación de asesores.' ) ),
 			'titulo'     => 'Constructora Hungría: ventas digitales de punta a punta',
 			'resumen'    => 'Más de seis años acompañando la comercialización de los proyectos de Constructora Hungría, en alianza con Perfek.',
 			'cliente'    => 'Constructora Hungría',
@@ -134,6 +135,7 @@ function impakto_sembrar_proyectos( $forzar ) {
 		),
 		array(
 			'slug'       => 'altaviva',
+			'solucion'   => implode( "\n", array( 'Campañas en Meta para audiencias locales y del exterior.', 'Valla publicitaria, paneles para feria y volante de lanzamiento.', 'Videos para redes y pauta.' ) ),
 			'titulo'     => 'Altaviva: lanzamiento y generación de leads',
 			'resumen'    => 'Campaña de lanzamiento de Altaviva Homes & Suites (Constructora Hungría y Perfek) en el sector Ancón Sur.',
 			'cliente'    => 'Altaviva Homes & Suites',
@@ -148,6 +150,7 @@ function impakto_sembrar_proyectos( $forzar ) {
 		),
 		array(
 			'slug'      => 'reserva-de-hungria',
+			'solucion'   => implode( "\n", array( 'Brand essence: personalidad aspiracional, serena, exclusiva, acogedora y auténtica; propósito "Inspirar a vivir más alto"; eslogan "Más alto, más tranquilidad, mejor vista".', 'Carruseles ("¡La altura que soñaste!", "Beneficios de comprar sobre planos").', 'Mailing de campañas y referidos.', 'Ayudaventas interactivo con entorno 360°.', 'Paneles de feria.' ) ),
 			'titulo'    => 'Reserva de Hungría: marca, contenido y ayudaventas',
 			'resumen'   => 'Brand essence, líneas gráficas para redes, mailing y ayudaventas interactivo para el condominio Reserva de Hungría.',
 			'cliente'   => 'Reserva de Hungría',
@@ -159,6 +162,7 @@ function impakto_sembrar_proyectos( $forzar ) {
 		),
 		array(
 			'slug'    => 'serranova',
+			'solucion'   => implode( "\n", array( 'Benchmarking: Zenú, Sagal, Catalán, Dan, Pietrán, La Fazenda y Swift.', 'Insights: tradición, origen, campo, ganadería, naturalidad, premium y autenticidad.', 'Exploración: Stivale, Montané, Montezelo, Estral, Del Estrado…', 'Resultado: Serranía + Nova → Serranova. Concepto central: "Nueva visión del origen rural".' ) ),
 			'titulo'  => 'Serranova: naming de marca cárnica premium',
 			'resumen' => 'Nombre para una marca cárnica premium con origen rural.',
 			'cliente' => 'Serranova',
@@ -167,6 +171,7 @@ function impakto_sembrar_proyectos( $forzar ) {
 		),
 		array(
 			'slug'    => 'del-estrado',
+			'solucion'   => implode( "\n", array( 'Benchmarking: Café La Loma, Tazamagna, Molina Coffee, Hacienda Venecia, Tío Conejo, Café Jardín y Morrogacho.', 'Insights: legado familiar, café de altura, perfil sensorial, procesos artesanales y sostenibilidad.', 'Resultado: Lugar elevado + Estrada → Del Estrado. Concepto central: "El honor y la grandeza cultivados en las alturas".' ) ),
 			'titulo'  => 'Del Estrado: naming de café especial',
 			'resumen' => 'Nombre para una marca de café especial de altura.',
 			'cliente' => 'Del Estrado',
@@ -175,6 +180,7 @@ function impakto_sembrar_proyectos( $forzar ) {
 		),
 		array(
 			'slug'      => 'axis-plaza',
+			'solucion'   => implode( "\n", array( 'Imagotipo vertical y horizontal, tipografía Merriweather y paleta Graphite, Bronze, Steel, Concrete e Ivory.', 'Aplicaciones en fachada, cerramientos de obra, bolsas, brochure, redes, sitio web y favicon.' ) ),
 			'titulo'    => 'Axis Plaza: brandbook',
 			'resumen'   => 'Brandbook completo de un centro comercial.',
 			'cliente'   => 'Axis Plaza',
@@ -185,6 +191,7 @@ function impakto_sembrar_proyectos( $forzar ) {
 		),
 		array(
 			'slug'      => 'dyme-metals',
+			'solucion'   => implode( "\n", array( 'Tipografía Sora y paleta de azules.', 'Aplicaciones en bodega, señalética, oficinas, dotación, papelería, redes y sitio web.' ) ),
 			'titulo'    => 'Dyme Metals: brandbook',
 			'resumen'   => 'Identidad para un proveedor de bobinas y componentes metálicos para techos.',
 			'cliente'   => 'Dyme Metals',
@@ -194,6 +201,7 @@ function impakto_sembrar_proyectos( $forzar ) {
 		),
 		array(
 			'slug'      => 'axel-park',
+			'solucion'   => implode( "\n", array( 'Tipografía Archivo y paleta Eclipse, Basalto, Ámbar, Bruma e Ivory.', 'Vallas, banderas, carpetas, brochure, redes y sitio web.' ) ),
 			'titulo'    => 'Axel Park: brandbook',
 			'resumen'   => 'Marca del "Eje logístico de Punta Cana".',
 			'cliente'   => 'Axel Park',
@@ -203,6 +211,7 @@ function impakto_sembrar_proyectos( $forzar ) {
 		),
 		array(
 			'slug'      => 'elite-metals',
+			'solucion'   => implode( "\n", array( 'Personalidad: determinada, consistente, clara, experta y rigurosa.', 'Valores: adaptabilidad, cercanía, excelencia operativa y solidez.', 'Propósito: contribuir a la seguridad y la tranquilidad de las personas mediante soluciones de techado de los más altos estándares.', 'Tagline: "Excellence in Roofing Supply".' ) ),
 			'titulo'    => 'Elite Metals: brand essence',
 			'resumen'   => 'Brand essence para un proveedor de suministros para techos: personalidad, valores, propósito y tagline.',
 			'cliente'   => 'Elite Metals',
@@ -253,9 +262,6 @@ function impakto_sembrar_proyectos( $forzar ) {
 	$n = 0;
 	foreach ( $proyectos as $orden => $p ) {
 		$contenido = '';
-		if ( ! empty( $p['reto'] ) ) {
-			$contenido = "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Reto</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>" . esc_html( $p['reto'] ) . "</p>\n<!-- /wp:paragraph -->";
-		}
 		$r = impakto_semilla_entrada(
 			array(
 				'post_type'    => 'proyecto',
@@ -274,6 +280,8 @@ function impakto_sembrar_proyectos( $forzar ) {
 					'caso_exito' => ! empty( $p['caso'] ),
 					'pills'      => $p['pills'] ?? '',
 					'resultados' => $p['resultados'] ?? '',
+					'reto'       => $p['reto'] ?? '',
+					'solucion'   => $p['solucion'] ?? '',
 				),
 				'terminos'     => array( 'categoria-portafolio' => $p['cats'] ),
 			),
@@ -447,4 +455,58 @@ function impakto_sembrar_menus( $forzar ) {
 	}
 	set_theme_mod( 'nav_menu_locations', $ubicaciones );
 	return 'menús asignados';
+}
+
+/**
+ * Cuerpo completo de los 5 artículos (data/articulos/*.html, convertidos desde contenido/blog/)
+ * y autor "Equipo Impakto". [CONFIRMAR] autores con nombre de los artículos 3, 4 y 5.
+ *
+ * @param bool $forzar Reemplazar el contenido existente.
+ * @return string
+ */
+function impakto_sembrar_contenido_articulos( $forzar ) {
+	$autor = get_user_by( 'login', 'equipo-impakto' );
+	if ( ! $autor ) {
+		$autor_id = wp_insert_user(
+			array(
+				'user_login'   => 'equipo-impakto',
+				'user_pass'    => wp_generate_password( 32, true, true ),
+				'user_email'   => 'equipo@' . wp_parse_url( home_url(), PHP_URL_HOST ) . '.invalid',
+				'display_name' => 'Equipo Impakto',
+				'nickname'     => 'Equipo Impakto',
+				'first_name'   => 'Equipo Impakto',
+				'user_nicename' => 'equipo-impakto',
+				'role'         => 'author',
+				'description'  => 'Somos un equipo multidisciplinario de estrategas, especialistas en performance y automatización, diseñadores, productores audiovisuales, creadores de contenido y desarrolladores web, todos bajo un mismo techo en Manizales.',
+			)
+		);
+		$autor = is_wp_error( $autor_id ) ? null : get_user_by( 'id', $autor_id );
+	}
+
+	$dir  = IMPAKTO_CORE_PATH . 'data/articulos/';
+	$meta = json_decode( (string) file_get_contents( $dir . 'articulos.json' ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+	$n    = 0;
+	foreach ( (array) $meta as $slug => $m ) {
+		$post = get_page_by_path( $slug, OBJECT, 'post' );
+		if ( ! $post || ( str_contains( $post->post_content, 'wp:heading' ) && ! $forzar ) ) {
+			continue;
+		}
+		$cat = get_term_by( 'slug', sanitize_title( $m['categoria'] ), 'category' );
+		wp_update_post(
+			wp_slash(
+				array(
+					'ID'            => $post->ID,
+					'post_content'  => file_get_contents( $dir . $slug . '.html' ), // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+					'post_excerpt'  => $m['respuesta'] ?? $post->post_excerpt,
+					'post_author'   => $autor ? $autor->ID : $post->post_author,
+					'post_category' => $cat ? array( $cat->term_id ) : wp_get_post_categories( $post->ID ),
+				)
+			)
+		);
+		update_post_meta( $post->ID, 'rank_math_title', $m['seo_title'] );
+		update_post_meta( $post->ID, 'rank_math_description', $m['meta_description'] );
+		update_post_meta( $post->ID, 'rank_math_focus_keyword', $m['palabra_clave'] );
+		++$n;
+	}
+	return "$n artículos con contenido";
 }

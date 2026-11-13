@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/caso",
+	"title": "Proyecto: caso completo",
+	"category": "impakto",
+	"description": "Hero con portada, ficha, reto, solución, resultados con contador, galería, video y testimonio, leídos de la ficha del proyecto. Se usa en la plantilla del proyecto.",
+	"textdomain": "impakto",
+	"attributes": {},
+	"supports": { "html": false, "inserter": false, "multiple": false },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": {}
+}

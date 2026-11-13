@@ -54,6 +54,10 @@ add_action(
 			wp_enqueue_script_module( 'impakto-' . $modulo, IMPAKTO_TEMA_URL . '/' . $ruta, array(), impakto_version_archivo( $ruta ) );
 		}
 
+		if ( is_post_type_archive( 'proyecto' ) || is_tax( 'categoria-portafolio' ) ) {
+			wp_enqueue_script_module( 'impakto-portafolio', IMPAKTO_TEMA_URL . '/assets/js/portafolio-filtros.js', array(), impakto_version_archivo( 'assets/js/portafolio-filtros.js' ) );
+		}
+
 		// Anclas del sitio anterior (/servicios#branding) → /servicios/branding/ (BRIEF §14).
 		if ( is_page( 'servicios' ) && function_exists( 'impakto_servicios_publicados' ) ) {
 			$impakto_slugs = wp_list_pluck( impakto_servicios_publicados(), 'post_name' );

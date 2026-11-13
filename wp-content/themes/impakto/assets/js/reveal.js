@@ -118,3 +118,15 @@ if ( enlacesGaleria.length ) {
 		caja.showModal();
 	} ) );
 }
+
+/* --- Video con fachada: el iframe de YouTube/Vimeo carga solo al hacer clic --- */
+document.querySelectorAll( '[data-video]' ).forEach( ( caja ) => {
+	caja.querySelector( 'button' )?.addEventListener( 'click', () => {
+		const iframe = document.createElement( 'iframe' );
+		iframe.src = caja.dataset.video;
+		iframe.title = 'Video del proyecto';
+		iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+		iframe.allowFullscreen = true;
+		caja.replaceChildren( iframe );
+	} );
+} );

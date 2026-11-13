@@ -54,7 +54,8 @@ add_action(
 	static function () {
 		global $wp_rewrite;
 		// El "front" de los enlaces ya es /blog/ (estructura /blog/%postname%/).
-		$wp_rewrite->author_base = 'autor';
+		$wp_rewrite->author_base      = 'autor';
+		$wp_rewrite->author_structure = $wp_rewrite->front . 'autor/%author%';
 	},
 	5
 );

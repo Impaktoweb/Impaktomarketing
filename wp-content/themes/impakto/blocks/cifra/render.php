@@ -14,7 +14,7 @@ $impakto_decimals = str_contains( $impakto_valor, ',' ) ? strlen( substr( strrch
 ?>
 <div <?php echo get_block_wrapper_attributes( array( 'class' => 'cifra' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<p class="cifra__valor">
-		<?php if ( $attributes['prefijo'] ) : ?><span class="cifra__prefijo"><?php echo esc_html( $attributes['prefijo'] ); ?></span><?php endif; ?><span class="cifra__numero" data-contador="<?php echo esc_attr( $impakto_num ); ?>" data-decimales="<?php echo esc_attr( $impakto_decimals ); ?>"><?php echo esc_html( $impakto_valor ); ?></span><?php if ( $attributes['sufijo'] ) : ?><span class="cifra__sufijo"><?php echo esc_html( $attributes['sufijo'] ); ?></span><?php endif; ?>
+		<?php if ( $attributes['prefijo'] ) : ?><span class="cifra__prefijo"><?php echo esc_html( $attributes['prefijo'] ); ?></span><?php endif; ?><span class="cifra__numero"<?php if ( preg_match( '/^\d[\d.,]*$/', $impakto_valor ) ) : ?> data-contador="<?php echo esc_attr( $impakto_num ); ?>" data-decimales="<?php echo esc_attr( $impakto_decimals ); ?>"<?php endif; ?>><?php echo esc_html( $impakto_valor ); ?></span><?php if ( $attributes['sufijo'] ) : ?><span class="cifra__sufijo"><?php echo esc_html( $attributes['sufijo'] ); ?></span><?php endif; ?>
 	</p>
 	<?php if ( $attributes['texto'] ) : ?>
 		<p class="cifra__texto"><?php echo esc_html( $attributes['texto'] ); ?></p>

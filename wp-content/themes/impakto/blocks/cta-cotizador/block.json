@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/cta-cotizador",
+	"title": "CTA Cotizador",
+	"category": "impakto",
+	"description": "Banda que lleva al cotizador del estudio, la sala de podcast o el alquiler de equipos (o a WhatsApp).",
+	"textdomain": "impakto",
+	"attributes": {
+		"destino": { "type": "string", "enum": [ "estudio", "podcast", "equipos", "whatsapp" ], "default": "estudio" },
+		"texto": { "type": "string", "default": "" },
+		"boton": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "className": true },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": { "etiquetas": { "destino": "Destino", "texto": "Texto (vacío = por defecto)", "boton": "Texto del botón (vacío = por defecto)" }, "opciones": { "destino": { "estudio": "Cotizador del estudio", "podcast": "Cotizador de la sala de podcast", "equipos": "Catálogo y cotizador de equipos", "whatsapp": "WhatsApp" } } }
+}

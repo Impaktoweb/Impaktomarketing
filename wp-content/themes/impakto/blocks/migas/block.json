@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "impakto/migas",
+	"title": "Migas de pan",
+	"category": "impakto",
+	"description": "Breadcrumbs visibles (Rank Math) con su BreadcrumbList. No se muestran en Inicio.",
+	"textdomain": "impakto",
+	"attributes": {},
+	"supports": { "html": false, "inserter": false, "multiple": false },
+	"editorScript": "impakto-bloques-editor",
+	"render": "file:./render.php",
+	"impakto": {}
+}

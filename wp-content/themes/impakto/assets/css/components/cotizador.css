@@ -25,7 +25,7 @@
 .cotizador__progreso button { display: flex; flex-direction: column; gap: 2px; width: 100%; min-height: var(--toque); padding: 4px 0; border: 0; background: none; color: var(--gray-600); font: 500 12px/1.3 var(--f-base); text-align: left; cursor: pointer; }
 .cotizador__progreso button span { color: var(--c-titulo); font-size: 20px; font-weight: 300; }
 .cotizador__progreso .es-actual button { color: var(--c-titulo); font-weight: 600; }
-.cotizador__progreso .es-actual button span { color: var(--orange-500); }
+.cotizador__progreso .es-actual button span { color: var(--c-acento-texto); }
 @media (min-width: 768px) { .cotizador__progreso button { flex-direction: row; align-items: baseline; gap: 10px; font-size: 14px; } }
 
 .cotizador__titulo { margin: 0 0 var(--s-4); padding: 0; color: var(--c-titulo); font-size: var(--t-h3); font-weight: 600; }

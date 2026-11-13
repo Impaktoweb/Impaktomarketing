@@ -199,3 +199,16 @@
 .boton-icono:hover { border-color: currentColor; }
 
 @keyframes aparecer { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* Migas de pan: sobre el hero, debajo del header */
+.migas { position: absolute; inset: calc(var(--alto-header) + 12px) 0 auto; z-index: 5; pointer-events: none; }
+.admin-bar .migas { top: calc(var(--alto-header) + 12px + var(--wp-admin--admin-bar--height, 0px)); }
+.migas p { margin: 0; color: var(--gray-600); font-size: 12px; letter-spacing: 0.04em; pointer-events: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.migas a { color: var(--gray-600); text-decoration: none; }
+.migas a:hover { color: var(--c-acento-texto); text-decoration: underline; }
+.migas .separator { margin: 0 6px; color: var(--gray-300); }
+.migas .last { color: var(--c-titulo); }
+.tiene-hero-oscuro .migas p, .tiene-hero-oscuro .migas a { color: var(--c-sobre-oscuro-suave); }
+.tiene-hero-oscuro .migas .last { color: var(--white); }
+.tiene-hero-oscuro .migas .separator { color: rgba(255, 255, 255, 0.35); }
+.parte-header { position: relative; }

@@ -109,3 +109,16 @@ add_action(
 		remove_action( 'wp_head', 'wlwmanifest_link' );
 	}
 );
+
+/**
+ * Las imágenes subidas generan sus tamaños en WebP (más livianas; srcset y width/height los pone WordPress).
+ */
+add_filter(
+	'image_editor_output_format',
+	static function ( $formatos ) {
+		$formatos['image/jpeg'] = 'image/webp';
+		$formatos['image/png']  = 'image/webp';
+		return $formatos;
+	}
+);
+add_filter( 'wp_editor_set_quality', static fn( $calidad, $mime ) => 'image/webp' === $mime ? 78 : $calidad, 10, 2 );

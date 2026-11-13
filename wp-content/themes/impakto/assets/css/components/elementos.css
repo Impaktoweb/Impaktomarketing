@@ -95,7 +95,7 @@
 	position: absolute;
 	left: 0;
 	top: -4px;
-	color: var(--orange-500);
+	color: var(--c-acento-titulo);
 	font-size: 44px;
 	font-weight: 300;
 	line-height: 1;

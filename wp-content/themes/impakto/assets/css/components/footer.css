@@ -8,6 +8,7 @@
 	line-height: 1.6;
 }
 .sitio-footer a { color: var(--white); text-decoration: none; }
+.sitio-footer a.boton:not(.boton--secundario):not(.boton--enlace) { color: var(--graphite-900); }
 .sitio-footer a:hover { color: var(--orange-500); }
 
 .sitio-footer__marca {

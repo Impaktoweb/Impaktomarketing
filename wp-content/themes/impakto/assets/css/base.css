@@ -39,9 +39,15 @@ mark.acento,
 }
 /* El naranja puro solo en tamaños ≥ 24 px o sobre fondo oscuro. */
 h1 mark.acento, h2 mark.acento, .wp-block-heading mark.acento,
-.is-style-display mark.acento { color: var(--orange-500); }
+.is-style-display mark.acento { color: var(--c-acento-titulo); }
 h3 mark.acento { color: var(--c-acento-texto); }
 .es-oscuro mark.acento, .es-oscuro .acento { color: var(--orange-500); }
+
+/* En fondos oscuros el naranja del logo sí cumple contraste: los acentos vuelven a #FF8000. */
+.es-oscuro, .is-style-seccion-oscura, .is-style-seccion-grafito, .is-style-seccion-cta, .is-style-hero-oscuro, .sitio-footer, .menu-movil, .mega, .cotizador__resumen, .kit, .tarjeta-proyecto, .cta-banda, .contacto-tarjeta--destacada {
+	--c-acento-titulo: var(--orange-500);
+	--c-acento-texto: var(--orange-500);
+}
 
 a { color: var(--c-acento-texto); text-underline-offset: 0.18em; text-decoration-thickness: 1px; transition: color var(--dur) var(--ease); }
 a:hover { color: var(--c-oscuro); }

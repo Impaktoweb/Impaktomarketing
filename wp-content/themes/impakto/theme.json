@@ -344,7 +344,7 @@
 			},
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--orange-700)"
+					"text": "var(--c-acento-texto)"
 				},
 				"typography": {
 					"textDecoration": "underline"

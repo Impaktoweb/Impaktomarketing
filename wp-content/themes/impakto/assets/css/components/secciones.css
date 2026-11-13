@@ -136,9 +136,9 @@
 @media (min-width: 782px) { .hero-dividido { min-height: min(100svh, 860px); } .hero-dividido__foto { --ratio: auto; min-height: 100%; } .hero-dividido__texto { display: flex; flex-direction: column; justify-content: center; height: 100%; padding-right: var(--s-8); } }
 .titulo-pila { font-size: clamp(44px, 5.4vw, 84px) !important; overflow-wrap: normal; word-break: keep-all; font-weight: 300 !important; line-height: 0.98 !important; letter-spacing: -0.02em; text-transform: uppercase; color: var(--graphite-700); }
 .titulo-pila strong { font-weight: 700; }
-.titulo-pila mark.acento { color: var(--orange-500) !important; font-weight: 300; }
+.titulo-pila mark.acento { color: var(--c-acento-titulo) !important; font-weight: 300; }
 .marcador-mapa { --ratio: 1 / 1; border-radius: var(--r-tarjeta); }
 .foto-espacio { --ratio: 4 / 3; border-radius: var(--r-tarjeta); margin-bottom: var(--s-5); }
-.numero { color: var(--orange-500); font-weight: 300; margin-right: 6px; }
+.numero { color: var(--c-acento-texto); font-weight: 300; margin-right: 6px; }
 .talento-detalle { margin-top: var(--s-8) !important; }
 .espacios-nosotros { gap: var(--s-6) !important; }

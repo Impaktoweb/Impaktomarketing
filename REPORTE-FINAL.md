@@ -16,7 +16,7 @@ Commits por fase: `d34dcd4` (1) · `dc9cb34` (2) · `d08b1ca` + `be7f67b` (3) ·
 | Banner de cookies: nada de analítica antes de aceptar | ✅ Comprobado: sin GA4, Pixel ni cookie de campaña antes de decidir; con "solo analítica" carga GA4 y no el Pixel. Consent Mode v2 por defecto `denied`. |
 | Redirecciones §14 | ✅ `/portfolio-item/{slug}/`, `/portafolio-item/{slug}/`, `/portafolio-categoria/{slug}/`, `/portfolio/`, `/hello-world/`, `/user-interface-graphic-design/`, `/category/{slug}/` → 301 al destino correcto. Anclas `/servicios#branding` → `/servicios/branding/` por JS. |
 | Revisión visual a 375, 768 y 1440 px | ✅ Todas las plantillas revisadas en cada fase; ninguna con desbordamiento horizontal a 375 px. |
-| Accesibilidad | ⚠️ axe-core (WCAG 2.1 A/AA) en 13 plantillas a 375 y 1440 px: 0 violaciones antes de la decisión de marca del punto 3.1; con #FF8000 en los títulos sobre fondo claro, axe vuelve a marcar el contraste de esos títulos y números (2,5:1). Resto sin violaciones: Saltar al contenido, foco visible, teclado en menús, mega menú y diálogos, `label` en todos los campos, total del cotizador con `aria-live`, `prefers-reduced-motion`. |
+| Accesibilidad | ⚠️ axe-core (WCAG 2.1 A/AA) en 13 plantillas a 375 y 1440 px: 0 violaciones antes de la decisión de marca del punto 3.1; con #FF8000 en títulos, números, enlaces y etiquetas sobre fondo claro, axe vuelve a marcar su contraste (2,5:1). Resto sin violaciones: Saltar al contenido, foco visible, teclado en menús, mega menú y diálogos, `label` en todos los campos, total del cotizador con `aria-live`, `prefers-reduced-motion`. |
 | Lista final de `[CONFIRMAR]` | ✅ Sección 4. |
 
 ## 2. Entregables
@@ -28,7 +28,7 @@ Commits por fase: `d34dcd4` (1) · `dc9cb34` (2) · `d08b1ca` + `be7f67b` (3) ·
 - `wp-content/themes/impakto/contenido/GUIA-PUBLICAR-ARTICULO.md` — guía para el equipo.
 
 ## 3. Cambios respecto a los textos y al BRIEF (aprobados por Impakto el 13/11/2026)
-1. **Naranja en títulos (decisión de marca):** los títulos y números sobre fondo claro usan el naranja del logo **#FF8000**, como en los PDF de la marca. Contraste 2,5:1: por debajo de WCAG AA, así que axe y Lighthouse lo marcarán y la puntuación de Accesibilidad puede quedar bajo 95. El texto naranja pequeño (enlaces, etiquetas) sí usa **#AD5300** para seguir siendo legible.
+1. **Naranja de Impakto en todo el sitio (decisión de marca):** títulos, números, enlaces y etiquetas usan el naranja del logo **#FF8000** también sobre fondo claro, como en los PDF de la marca. Contraste 2,5:1: por debajo de WCAG AA (4,5:1 en texto pequeño y 3:1 en grande), así que axe y Lighthouse lo marcarán y la puntuación de Accesibilidad puede quedar bajo 95. Los botones naranjas siguen con texto grafito (6,8:1).
 2. **Sección naranja** con texto grafito (el blanco sobre naranja no cumple WCAG).
 3. **Podcast:** "hasta 4 cámaras" → "hasta 3 cámaras" (Inicio y meta descripción), coherente con los paquetes.
 4. **Líneas de tiempo:** se quitaron los dos puntos tras cada título y el texto empieza con mayúscula. "Para quién" con mayúscula inicial.
@@ -55,7 +55,7 @@ Commits por fase: `d34dcd4` (1) · `dc9cb34` (2) · `d08b1ca` + `be7f67b` (3) ·
 - [ ] PDF "Plantilla de cotización Estudio y Podcast" (no llegó).
 
 **Tarifas y alquiler**
-- [x] Anticipo del 20 % y saldo al finalizar (aprobado). Pendiente solo: penalidad del 50 % del contrato por cancelar con menos de 24 h.
+- [x] Anticipo del 20 % y saldo al finalizar (aprobado). Penalidad del 50 % del valor del alquiler por cancelar con menos de 24 h (confirmada y publicada en la Política de cancelaciones y daños).
 - [ ] Unidad del precio de equipos (se usó **jornada**).
 - [ ] Precios de los 14 equipos en borrador y de los dos lentes "???".
 - [ ] Medida del sinfín: 12 × 4 m o 10 × 4 m ("4 × 10 m" en Sobre Impakto; "más de 100 m², total 350 m²" en la portada de Términos).

@@ -40,6 +40,7 @@ $impakto_core_includes = array(
 	'leads-admin',
 	'aeo',
 	'redirecciones',
+	'instalador',
 	'roles',
 );
 foreach ( $impakto_core_includes as $impakto_core_file ) {

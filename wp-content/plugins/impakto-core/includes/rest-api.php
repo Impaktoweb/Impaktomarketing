@@ -112,3 +112,14 @@ add_action(
 		);
 	}
 );
+
+/**
+ * Los ajustes y las tarifas se imprimen en todas las páginas (NAP, WhatsApp, IDs de analítica,
+ * precios): al guardarlos se purga la caché de páginas de LiteSpeed para que se vean al instante.
+ */
+$impakto_purgar_cache = static function () {
+	do_action( 'litespeed_purge_all' );
+};
+add_action( 'update_option_impakto_tarifas', $impakto_purgar_cache );
+add_action( 'update_option_impakto_ajustes', $impakto_purgar_cache );
+add_action( 'add_option_impakto_ajustes', $impakto_purgar_cache );

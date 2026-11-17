@@ -20,11 +20,11 @@ ob_start();
 	<li>Reserva con al menos un día de anticipación; confirmas con el anticipo indicado en los términos de alquiler.</li>
 	<li>Depósito de seguridad reembolsable de <?php echo esc_html( impakto_cop( $datos['deposito'] ) ); ?>.</li>
 	<li>Puedes reprogramar sin penalidad hasta 24 horas antes. Tienes 30 minutos de tolerancia de llegada.</li>
-	<li>Todos los valores incluyen IVA.</li>
+	<li>Los valores no incluyen IVA.</li>
 </ul>
 <p style="margin:0 0 24px;font-size:14px;"><a href="<?php echo esc_url( home_url( '/terminos-de-alquiler/' ) ); ?>" style="color:#B35600;">Lee los términos de alquiler completos</a></p>
 <table role="presentation" cellspacing="0" cellpadding="0"><tr><td style="border-radius:999px;background:#FF8000;">
-	<a href="<?php echo esc_url( $datos['whatsapp_url'] ); ?>" style="display:inline-block;padding:14px 28px;color:#111110;font-weight:bold;text-decoration:none;font-size:15px;">Validar disponibilidad por WhatsApp</a>
+	<a href="<?php echo esc_attr( impakto_url_whatsapp_segura( $datos['whatsapp_url'] ) ); ?>" style="display:inline-block;padding:14px 28px;color:#111110;font-weight:bold;text-decoration:none;font-size:15px;">Validar disponibilidad por WhatsApp</a>
 </td></tr></table>
 <?php
 $datos['contenido'] = ob_get_clean();

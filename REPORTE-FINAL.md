@@ -38,7 +38,9 @@ Commits por fase: `d34dcd4` (1) · `dc9cb34` (2) · `d08b1ca` + `be7f67b` (3) ·
 8. **Blog:** autor "Equipo Impakto" para los 5 artículos; se omitió la pregunta del parqueadero (sin respuesta); las respuestas del FAQ de los artículos quedaron sin enlaces.
 9. **Cotizador:** equipos sin precio no se muestran; productor en alquiler de equipos = jornada de 8 h "sujeto a confirmación"; kits = suma de sus equipos; podcast con equipos adicionales de micrófonos, teleprompters e iluminación.
 10. **Portafolio:** solo 4 proyectos marcados "Destacado" (Inicio muestra 4, no 5–6).
-11. Descripciones de categorías del blog redactadas para SEO (neutras, sin cifras).
+11. **Precios sin IVA (decisión del 17/11/2026):** todas las tarifas publicadas son **más IVA**. Se cambió en tablas, chips "desde", cotizador, correos, mensaje de WhatsApp, artículos, FAQ, legales, `/llms.txt` y JSON-LD (`valueAddedTaxIncluded: false`).
+12. Mensaje de WhatsApp de la cotización con saltos de línea y sin emoji (el enlace del correo ya no pierde los saltos).
+13. Descripciones de categorías del blog redactadas para SEO (neutras, sin cifras).
 
 ## 4. Datos `[CONFIRMAR]` pendientes
 **Empresa y contacto**

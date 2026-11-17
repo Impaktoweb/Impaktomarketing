@@ -14,7 +14,7 @@ $impakto_preguntas = array(
 	array( '¿Qué servicios ofrece Impakto Marketing?', 'Investigación de mercados, naming, branding, producción audiovisual y fotografía, diseño gráfico, redes sociales, pauta en Meta y Google, sitios web con SEO, y CRM y ventas digitales. Además alquilamos nuestro estudio audiovisual, la sala de podcast y los equipos.' ),
 	array( '¿Dónde está ubicada la agencia?', 'En Manizales, Caldas: Cra. 22 #35-62, detrás de Hyundai. Trabajamos con marcas de todo el Eje Cafetero, de Colombia y del exterior.' ),
 	array( '¿Trabajan con empresas fuera de Manizales?', 'Sí. Hemos trabajado en proyectos de Colombia, Costa Rica, Panamá, Londres y Estados Unidos, y gestionamos campañas para audiencias locales y en el exterior.' ),
-	array( '¿Cuánto cuesta alquilar el estudio o la sala de podcast?', 'El estudio cuesta desde $120.000 por hora y la sala de podcast desde $180.000 por hora, con IVA incluido. Puedes armar tu cotización en línea según el tiempo y los equipos que necesites.' ),
+	array( '¿Cuánto cuesta alquilar el estudio o la sala de podcast?', 'El estudio cuesta desde $120.000 por hora y la sala de podcast desde $180.000 por hora, más IVA. Puedes armar tu cotización en línea según el tiempo y los equipos que necesites.' ),
 	array( '¿Cómo empiezo a trabajar con Impakto?', 'Escríbenos por WhatsApp y cuéntanos tu objetivo. Agendamos una conversación, entendemos tu negocio y te presentamos una propuesta a la medida.' ),
 );
 $impakto_faq = array(

@@ -156,6 +156,6 @@ $impakto_pintar_grupos = static function ( $grupos, $modo ) {
 				</li>
 			<?php endforeach; ?>
 		</ul>
-		<p class="selector-espacio__nota is-style-nota"><?php esc_html_e( 'Valores con IVA incluido. Todo es personalizable según los equipos y el tiempo que necesites.', 'impakto' ); ?></p>
+		<p class="selector-espacio__nota is-style-nota"><?php esc_html_e( 'Valores sin IVA. Todo es personalizable según los equipos y el tiempo que necesites.', 'impakto' ); ?></p>
 	</div>
 </dialog>

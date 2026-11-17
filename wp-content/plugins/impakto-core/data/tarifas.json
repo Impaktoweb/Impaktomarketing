@@ -1,7 +1,7 @@
 {
-  "_nota": "Datos iniciales del cotizador. Se importan una sola vez a Impakto > Tarifas y desde allí se editan. Valores en COP con IVA incluido. Fuentes: 'Plantilla cotización Estudio y Podcast' (espacios, podcast, edición, adicionales) y 'Plantilla 3 portada' (equipos). Los campos 'confirmar' indican datos que Impakto debe validar.",
+  "_nota": "Datos iniciales del cotizador. Se importan una sola vez a Impakto > Tarifas y desde allí se editan. Valores en COP, más IVA. Fuentes: 'Plantilla cotización Estudio y Podcast' (espacios, podcast, edición, adicionales) y 'Plantilla 3 portada' (equipos). Los campos 'confirmar' indican datos que Impakto debe validar.",
   "moneda": "COP",
-  "iva_incluido": true,
+  "iva_incluido": false,
   "deposito_reembolsable": 200000,
   "whatsapp": "573125525901",
 

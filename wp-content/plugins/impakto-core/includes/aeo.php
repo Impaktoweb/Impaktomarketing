@@ -58,7 +58,7 @@ function impakto_llms_txt() {
 	}
 	$l[] = '';
 
-	$l[] = '## Espacios y alquiler (precios en COP con IVA incluido)';
+	$l[] = '## Espacios y alquiler (precios en COP sin IVA)';
 	$t   = impakto_tarifas();
 	foreach ( $t['estudio']['espacios'] ?? array() as $e ) {
 		$l[] = '- Estudio audiovisual, ' . $e['nombre'] . ' (' . $e['descripcion'] . '): 1 hora ' . impakto_cop( $e['bloques'][1] ) . ' · 4 horas ' . impakto_cop( $e['bloques'][4] ) . ' · 8 horas ' . impakto_cop( $e['bloques'][8] ) . '. ' . home_url( '/estudio/' );

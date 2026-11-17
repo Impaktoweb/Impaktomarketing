@@ -111,7 +111,7 @@ function impakto_campos() {
 		),
 		'equipo'   => array(
 			'precio'            => array(
-				'etiqueta' => __( 'Precio (COP, IVA incluido)', 'impakto-core' ),
+				'etiqueta' => __( 'Precio (COP, IVA no incluido)', 'impakto-core' ),
 				'tipo'     => 'number',
 				'ayuda'    => __( 'Vacío o 0 = "Consultar precio" y no suma al total.', 'impakto-core' ),
 			),

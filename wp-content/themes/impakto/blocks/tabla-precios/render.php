@@ -28,7 +28,7 @@ if ( 'estudio' === $attributes['tabla'] ) :
 				<?php endforeach; ?>
 			</tbody>
 		</table>
-		<figcaption class="wp-element-caption"><?php esc_html_e( 'Valores en COP con IVA incluido.', 'impakto' ); ?></figcaption>
+		<figcaption class="wp-element-caption"><?php esc_html_e( 'Valores en COP, más IVA.', 'impakto' ); ?></figcaption>
 	</figure>
 <?php elseif ( 'podcast' === $attributes['tabla'] ) : ?>
 	<figure <?php echo $impakto_w; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
@@ -40,7 +40,7 @@ if ( 'estudio' === $attributes['tabla'] ) :
 				<?php endforeach; ?>
 			</tbody>
 		</table>
-		<figcaption class="wp-element-caption"><?php echo esc_html( sprintf( /* translators: %d: horas. */ __( 'Valores en COP con IVA incluido. Tarifa publicada hasta %d horas.', 'impakto' ), (int) ( $impakto_t['podcast']['horas_tarifa_publicada'] ?? 4 ) ) ); ?></figcaption>
+		<figcaption class="wp-element-caption"><?php echo esc_html( sprintf( /* translators: %d: horas. */ __( 'Valores en COP, más IVA. Tarifa publicada hasta %d horas.', 'impakto' ), (int) ( $impakto_t['podcast']['horas_tarifa_publicada'] ?? 4 ) ) ); ?></figcaption>
 	</figure>
 <?php else : ?>
 	<?php $impakto_ed = $impakto_t['podcast']['edicion'] ?? array(); ?>
@@ -53,6 +53,6 @@ if ( 'estudio' === $attributes['tabla'] ) :
 				<?php endforeach; ?>
 			</tbody>
 		</table>
-		<figcaption class="wp-element-caption"><?php esc_html_e( 'Valores en COP con IVA incluido.', 'impakto' ); ?></figcaption>
+		<figcaption class="wp-element-caption"><?php esc_html_e( 'Valores en COP, más IVA.', 'impakto' ); ?></figcaption>
 	</figure>
 <?php endif; ?>

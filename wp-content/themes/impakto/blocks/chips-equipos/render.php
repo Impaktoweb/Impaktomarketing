@@ -25,4 +25,4 @@ $impakto_cats = array(
 		<?php endif; ?>
 	<?php endforeach; ?>
 </div>
-<p class="is-style-nota chips-equipos__nota"><?php esc_html_e( 'Precios por jornada, con IVA incluido.', 'impakto' ); ?></p>
+<p class="is-style-nota chips-equipos__nota"><?php esc_html_e( 'Precios por jornada, más IVA.', 'impakto' ); ?></p>

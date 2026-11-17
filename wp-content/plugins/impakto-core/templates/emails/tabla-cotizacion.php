@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 		</tr>
 	<?php endforeach; ?>
 	<tr>
-		<td style="padding:14px 0;font-size:17px;"><strong>Total estimado</strong> <span style="color:#5E5E5C;font-size:13px;">(IVA incluido)</span></td>
+		<td style="padding:14px 0;font-size:17px;"><strong>Total estimado</strong> <span style="color:#5E5E5C;font-size:13px;">(IVA no incluido)</span></td>
 		<td align="right" style="padding:14px 0;font-size:20px;color:#B35600;white-space:nowrap;"><strong><?php echo esc_html( impakto_cop( $cot['total'] ) ); ?></strong></td>
 	</tr>
 </table>

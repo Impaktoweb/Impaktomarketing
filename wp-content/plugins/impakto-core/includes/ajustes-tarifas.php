@@ -127,7 +127,7 @@ function impakto_pantalla_tarifas() {
 		echo '<p>' . esc_html__( 'Aún no hay tarifas. Importa el archivo inicial.', 'impakto-core' ) . '</p>';
 	} else {
 		$campo = static fn( $nombre, $valor, $ancho = 'small-text' ) => sprintf( '<input type="text" inputmode="numeric" class="%3$s" style="%4$s" name="%1$s" value="%2$s">', esc_attr( $nombre ), esc_attr( $valor ), esc_attr( $ancho ), 'small-text' === $ancho ? 'width:120px' : '' );
-		echo '<p>' . esc_html__( 'Valores en pesos colombianos con IVA incluido (escribe solo números). Los equipos se editan uno por uno en', 'impakto-core' ) . ' <a href="' . esc_url( admin_url( 'edit.php?post_type=equipo' ) ) . '">' . esc_html__( 'Equipos', 'impakto-core' ) . '</a>.</p>';
+		echo '<p>' . esc_html__( 'Valores en pesos colombianos sin IVA (escribe solo números). Los equipos se editan uno por uno en', 'impakto-core' ) . ' <a href="' . esc_url( admin_url( 'edit.php?post_type=equipo' ) ) . '">' . esc_html__( 'Equipos', 'impakto-core' ) . '</a>.</p>';
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '"><input type="hidden" name="action" value="impakto_tarifas_guardar">';
 		wp_nonce_field( 'impakto_tarifas_guardar' );
 

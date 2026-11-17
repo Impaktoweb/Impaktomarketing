@@ -170,7 +170,7 @@ class Cotizador {
 						<button type="button" class="cotizador__resumen-cerrar boton-icono" data-resumen-cerrar aria-label="Cerrar resumen">×</button>
 					</div>
 					<ul class="cotizador__lineas"></ul>
-					<p class="cotizador__total"><span>Total estimado <small>IVA incluido</small></span><strong aria-live="polite" aria-atomic="true"></strong></p>
+					<p class="cotizador__total"><span>Total estimado <small>IVA no incluido</small></span><strong aria-live="polite" aria-atomic="true"></strong></p>
 					<ul class="cotizador__notas"></ul>
 					<p class="cotizador__leyenda">${ LEYENDA }</p>
 					${ this.c.deposito ? `<p class="cotizador__deposito">Depósito de seguridad reembolsable: <strong>${ cop( this.c.deposito ) }</strong>.</p>` : '' }
@@ -526,7 +526,7 @@ class Cotizador {
 		caja.innerHTML = `<p class="kicker">Cotización ${ esc( datos.consecutivo ) }</p>
 			<h3>${ accion === 'whatsapp' ? '¡Listo! Te esperamos en WhatsApp' : '¡Listo! Revisa tu correo' }</h3>
 			<p>${ accion === 'whatsapp' ? 'Abrimos WhatsApp con el resumen de tu cotización. Envía el mensaje y confirmamos disponibilidad.' : 'Te enviamos la cotización con el resumen y las condiciones clave. También puedes validar disponibilidad por WhatsApp.' }</p>
-			<p class="cotizador__total"><span>Total estimado <small>IVA incluido</small></span><strong>${ cop( datos.total ) }</strong></p>
+			<p class="cotizador__total"><span>Total estimado <small>IVA no incluido</small></span><strong>${ cop( datos.total ) }</strong></p>
 			<a class="boton" href="${ esc( datos.whatsapp_url ) }" target="_blank" rel="noopener" data-evento="click_whatsapp" data-ubicacion="cotizador">${ accion === 'whatsapp' ? 'Abrir WhatsApp de nuevo' : 'Validar disponibilidad por WhatsApp' }</a>`;
 		this.raiz.querySelector( '.cotizador__form' ).hidden = true;
 		caja.hidden = false;

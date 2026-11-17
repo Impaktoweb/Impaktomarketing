@@ -160,3 +160,15 @@ function impakto_bloques_proceso() {
 		'ventas'               => __( 'Ventas', 'impakto-core' ),
 	);
 }
+
+/**
+ * Enlace de WhatsApp para imprimir en un href conservando los saltos de línea (%0A).
+ * esc_url() los elimina, así que aquí solo se acepta un enlace https://wa.me/ armado por el
+ * propio plugin (el texto ya va con rawurlencode); cualquier otra cosa devuelve ''.
+ *
+ * @param string $url Enlace.
+ * @return string
+ */
+function impakto_url_whatsapp_segura( $url ) {
+	return preg_match( '#^https://wa\.me/\d+\?text=[A-Za-z0-9%._~\-]*$#', (string) $url ) ? $url : '';
+}

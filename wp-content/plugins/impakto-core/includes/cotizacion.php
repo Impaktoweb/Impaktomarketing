@@ -181,24 +181,24 @@ function impakto_cotizar( $tipo, $sel ) {
  * @return string
  */
 function impakto_mensaje_whatsapp( $cot, $consecutivo, $sel, $contacto ) {
-	$lineas = array(
-		'Hola Impakto 👋 Quiero validar disponibilidad.',
-		'Cotización ' . $consecutivo,
-		'Servicio: ' . $cot['servicio'],
-	);
-	$fecha = impakto_fecha_legible( $sel['fecha'] ?? '', $sel['hora'] ?? '' );
+	$servicio = array( 'Servicio: ' . $cot['servicio'] . '.' );
+	$fecha    = impakto_fecha_legible( $sel['fecha'] ?? '', $sel['hora'] ?? '' );
 	if ( $fecha ) {
-		$lineas[] = ( 'equipos' === $cot['tipo'] ? 'Fecha de recogida: ' : 'Fecha deseada: ' ) . $fecha;
+		$servicio[] = ( 'equipos' === $cot['tipo'] ? 'Fecha de recogida: ' : 'Fecha deseada: ' ) . $fecha . '.';
 	}
 	if ( $cot['equipos'] ) {
-		$lineas[] = 'Equipos: ' . implode( ', ', $cot['equipos'] );
+		$servicio[] = 'Equipos: ' . implode( ', ', $cot['equipos'] ) . '.';
 	}
 	if ( $cot['adicionales'] ) {
-		$lineas[] = 'Adicionales: ' . implode( ', ', $cot['adicionales'] );
+		$servicio[] = 'Adicionales: ' . implode( ', ', $cot['adicionales'] ) . '.';
 	}
-	$lineas[] = 'Total estimado: ' . impakto_cop( $cot['total'] ) . ' (IVA incluido)';
-	$lineas[] = 'Nombre: ' . $contacto['nombre'] . ' · Celular: ' . $contacto['celular'];
-	return implode( "\n", $lineas );
+	$bloques = array(
+		"¡Hola Impakto! Quiero validar disponibilidad.\nCotización " . $consecutivo,
+		implode( "\n", $servicio ),
+		'Total estimado: ' . impakto_cop( $cot['total'] ) . ' (IVA no incluido)',
+		'Nombre: ' . $contacto['nombre'] . "\n· Celular: " . $contacto['celular'],
+	);
+	return implode( "\n\n", $bloques );
 }
 
 /**

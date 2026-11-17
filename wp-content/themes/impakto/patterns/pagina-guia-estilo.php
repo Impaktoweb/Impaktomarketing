@@ -165,7 +165,7 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:paragraph -->
 
 <!-- wp:table {"className":"is-style-tarifas"} -->
-<figure class="wp-block-table is-style-tarifas"><table><thead><tr><th>Tiempo</th><th>Valor</th></tr></thead><tbody><tr><td>1 hora</td><td>$120.000 COP</td></tr><tr><td>4 horas</td><td>$350.000 COP</td></tr><tr><td>8 horas</td><td>$700.000 COP</td></tr></tbody></table><figcaption class="wp-element-caption">Valores con IVA incluido.</figcaption></figure>
+<figure class="wp-block-table is-style-tarifas"><table><thead><tr><th>Tiempo</th><th>Valor</th></tr></thead><tbody><tr><td>1 hora</td><td>$120.000 COP</td></tr><tr><td>4 horas</td><td>$350.000 COP</td></tr><tr><td>8 horas</td><td>$700.000 COP</td></tr></tbody></table><figcaption class="wp-element-caption">Valores sin IVA.</figcaption></figure>
 <!-- /wp:table --></div>
 <!-- /wp:column -->
 

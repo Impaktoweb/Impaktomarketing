@@ -139,7 +139,14 @@ function impakto_instalar_sitio( $forzar = false ) {
 		$r         = impakto_importar_tarifas( (string) file_get_contents( impakto_tarifas_json_defecto() ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 		$resumen[] = is_wp_error( $r ) ? 'Tarifas: ' . $r->get_error_message() : sprintf( 'Tarifas importadas (%d equipos).', $r['equipos_creados'] );
 	} else {
-		$resumen[] = 'Tarifas: ya existían, no se tocaron.';
+		// Las tarifas guardadas no se tocan, salvo la marca de IVA, que sigue al archivo del plugin.
+		$archivo = json_decode( (string) file_get_contents( impakto_tarifas_json_defecto() ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		$guardadas = get_option( 'impakto_tarifas' );
+		if ( is_array( $guardadas ) && is_array( $archivo ) && isset( $archivo['iva_incluido'] ) && ( $guardadas['iva_incluido'] ?? null ) !== $archivo['iva_incluido'] ) {
+			$guardadas['iva_incluido'] = (bool) $archivo['iva_incluido'];
+			update_option( 'impakto_tarifas', $guardadas );
+		}
+		$resumen[] = 'Tarifas: ya existían, no se tocaron (IVA no incluido).';
 	}
 	foreach ( array( 'articulos', 'contenido-articulos', 'servicios', 'contenido-servicios', 'proyectos', 'paginas', 'legales', 'menus' ) as $tipo ) {
 		$resumen[] = $tipo . ': ' . call_user_func( 'impakto_sembrar_' . str_replace( '-', '_', $tipo ), $forzar );

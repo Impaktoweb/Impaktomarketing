@@ -3,7 +3,7 @@
  * Datos estructurados (BRIEF §13), coherentes con lo visible. Amplía el grafo de Rank Math:
  * - Organización global: ["ProfessionalService","LocalBusiness"] con NIT, dirección, geo, teléfono,
  *   areaServed, sameAs y horario (si está configurado).
- * - Estudio y Sala de podcast: Service + Offer con el precio "desde" (COP, IVA incluido).
+ * - Estudio y Sala de podcast: Service + Offer con el precio "desde" (COP, IVA no incluido).
  * - Alquiler de equipos: Service con OfferCatalog por categoría.
  * - Servicios: Service (provider → organización). FAQPage lo genera el bloque FAQ de Rank Math.
  * - Proyectos: CreativeWork.
@@ -93,7 +93,7 @@ function impakto_schema_oferta_desde( $precio ) {
 			'priceCurrency'         => 'COP',
 			'unitText'              => 'hora',
 			'unitCode'              => 'HUR',
-			'valueAddedTaxIncluded' => true,
+			'valueAddedTaxIncluded' => false,
 			'minPrice'              => $precio,
 		),
 		'areaServed'         => array( '@type' => 'City', 'name' => 'Manizales' ),
@@ -155,7 +155,7 @@ add_filter(
 								'price'                 => $it['precio'],
 								'priceCurrency'         => 'COP',
 								'unitText'              => 'jornada',
-								'valueAddedTaxIncluded' => true,
+								'valueAddedTaxIncluded' => false,
 							),
 						),
 						$cat['items']

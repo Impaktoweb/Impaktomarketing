@@ -9,6 +9,8 @@
  * | /portfolio/                                         | /portafolio/                               |
  * | /user-interface-graphic-design/, /hello-world/      | /blog/                                     |
  * | /category/{slug}/                                   | /blog/                                     |
+ * | /estudio-de-produccion-audiovisual/, /pagina-de-reserva/ | /estudio/                             |
+ * | /impakto-marketing/                                 | / (Inicio)                                 |
  *
  * @package ImpaktoCore
  */
@@ -37,6 +39,14 @@ function impakto_destino_redireccion( $ruta ) {
 	}
 	if ( in_array( $ruta, array( 'user-interface-graphic-design', 'hello-world' ), true ) || preg_match( '#^category/[^/]+(?:/page/\d+)?$#', $ruta ) ) {
 		return home_url( '/blog/' );
+	}
+	$paginas = array(
+		'estudio-de-produccion-audiovisual' => '/estudio/',
+		'pagina-de-reserva'                 => '/estudio/',
+		'impakto-marketing'                 => '/',
+	);
+	if ( isset( $paginas[ $ruta ] ) ) {
+		return home_url( $paginas[ $ruta ] );
 	}
 	return '';
 }

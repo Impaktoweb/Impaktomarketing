@@ -195,5 +195,37 @@ function impakto_pantalla_instalacion() {
 	wp_nonce_field( 'impakto_instalar' );
 	echo '<p><label><input type="checkbox" name="forzar" value="1"> ' . esc_html__( 'Reemplazar el contenido sembrado si ya existe (borra cambios hechos a mano en esas páginas)', 'impakto-core' ) . '</label></p>';
 	submit_button( __( 'Instalar contenido y configuración', 'impakto-core' ), 'primary', 'impakto_instalar' );
-	echo '</form></div>';
+	echo '</form>';
+	impakto_seccion_vaciar_pruebas();
+	echo '</div>';
+}
+
+/**
+ * Vaciar las solicitudes de prueba y reiniciar el consecutivo. Solo aparece mientras el sitio
+ * está bloqueado para buscadores (staging), para que no se use por error en el sitio publicado.
+ */
+function impakto_seccion_vaciar_pruebas() {
+	if ( '0' !== (string) get_option( 'blog_public' ) ) {
+		return;
+	}
+	global $wpdb;
+	$tabla = impakto_tabla_solicitudes();
+	if ( isset( $_POST['impakto_vaciar'] ) && check_admin_referer( 'impakto_vaciar' ) && ! empty( $_POST['confirmo'] ) ) {
+		$borradas = (int) $wpdb->query( "DELETE FROM {$tabla}" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery,WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$contadores = $wpdb->get_col( $wpdb->prepare( "SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s", $wpdb->esc_like( 'impakto_consecutivo_' ) . '%' ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		foreach ( $contadores as $opcion ) {
+			delete_option( $opcion );
+		}
+		/* translators: %d: número de solicitudes. */
+		echo '<div class="notice notice-success"><p>' . esc_html( sprintf( __( 'Se borraron %d solicitudes y el consecutivo vuelve a empezar en 0001.', 'impakto-core' ), $borradas ) ) . '</p></div>';
+	}
+	$total = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$tabla}" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery,WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+	echo '<hr><h2>' . esc_html__( 'Antes de publicar: borrar solicitudes de prueba', 'impakto-core' ) . '</h2>';
+	/* translators: %d: número de solicitudes. */
+	echo '<p>' . esc_html( sprintf( __( 'Hay %d solicitudes registradas. Este botón las borra todas y reinicia el consecutivo de cotizaciones (IMP-AAAA-0001). Solo está disponible mientras el sitio está oculto a los buscadores.', 'impakto-core' ), $total ) ) . '</p>';
+	echo '<form method="post">';
+	wp_nonce_field( 'impakto_vaciar' );
+	echo '<p><label><input type="checkbox" name="confirmo" value="1" required> ' . esc_html__( 'Confirmo que todas las solicitudes son de prueba', 'impakto-core' ) . '</label></p>';
+	submit_button( __( 'Borrar solicitudes de prueba', 'impakto-core' ), 'delete', 'impakto_vaciar' );
+	echo '</form>';
 }
